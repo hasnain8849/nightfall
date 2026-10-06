@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Nightfall: Haunted Night 2026</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Cinzel Decorative, Cinzel, Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&amp;family=Cinzel+Decorative:wght@700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome Icons for accurate vector rendering -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            night: '#08080d',
+            'night-card': '#11101a',
+            'night-border': 'rgba(168, 85, 247, 0.18)',
+            crimson: {
+              DEFAULT: '#ff1a40',
+              hover: '#e01034',
+              glow: 'rgba(255, 26, 64, 0.45)'
+            },
+            spooky: {
+              orange: '#ff6600',
+              purple: '#9d4edd',
+              violet: '#1c152e'
+            }
+          },
+          fontFamily: {
+            cinzel: ['"Cinzel"', 'serif'],
+            decorative: ['"Cinzel Decorative"', 'serif'],
+            sans: ['"Inter"', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+<style data-purpose="custom-decorations">
+    /* Subtle spooky glow utilities */
+    .glow-crimson-text {
+      text-shadow: 0 0 15px rgba(255, 30, 70, 0.7), 0 0 30px rgba(225, 29, 72, 0.4);
+    }
+    .glow-crimson-box {
+      box-shadow: 0 0 25px rgba(244, 38, 79, 0.35);
+    }
+    .glow-card {
+      border: 1px solid rgba(147, 51, 234, 0.22);
+      background: linear-gradient(180deg, rgba(28, 21, 46, 0.75) 0%, rgba(13, 11, 20, 0.9) 100%);
+      backdrop-filter: blur(12px);
+    }
+    .glow-card-vip {
+      border: 1.5px solid #ff2a55;
+      background: linear-gradient(180deg, rgba(46, 15, 26, 0.8) 0%, rgba(17, 10, 20, 0.95) 100%);
+      box-shadow: 0 0 30px rgba(255, 42, 85, 0.3);
+    }
+    /* Hide scrollbar for native touch feels */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#07060b] text-gray-200 font-sans antialiased overflow-x-hidden selection:bg-crimson selection:text-white">
+<!-- BEGIN: MobileHeader -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#08070e]/85 backdrop-blur-md border-b border-purple-950/40">
+<div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center gap-2 group" data-purpose="brand-logo" href="#">
+<span class="w-7 h-7 rounded-full bg-gradient-to-tr from-crimson to-purple-600 flex items-center justify-center text-xs text-white shadow-lg shadow-crimson/30">
+<i class="fa-solid fa-moon"></i>
+</span>
+<span class="font-cinzel text-xl tracking-[0.25em] font-extrabold text-white group-hover:text-red-400 transition-colors">
+          NIGHT<span class="text-crimson">FALL</span>
+</span>
+</a>
+<!-- Action & Mobile Menu Button -->
+<div class="flex items-center gap-3">
+<a class="text-xs uppercase font-bold tracking-wider px-3 py-1.5 rounded-full bg-crimson text-white hover:bg-crimson-hover shadow-md shadow-crimson/30 transition-all" href="#tickets">
+          Tickets
+        </a>
+<button aria-label="Open Navigation Menu" class="text-gray-300 hover:text-white p-1.5 focus:outline-none" id="menu-toggle">
+<i class="fa-solid fa-bars-staggered text-lg"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Drawer Dropdown -->
+<nav class="hidden max-w-md mx-auto px-5 py-4 bg-[#0d0b16] border-b border-purple-900/40 space-y-3 font-cinzel text-sm" id="mobile-menu">
+<a class="block text-gray-300 hover:text-crimson py-1" href="#hero">Home</a>
+<a class="block text-gray-300 hover:text-crimson py-1" href="#highlights">Highlights</a>
+<a class="block text-gray-300 hover:text-crimson py-1" href="#experience">Experiences</a>
+<a class="block text-crimson font-bold py-1" href="#tickets">Buy Tickets</a>
+<a class="block text-gray-300 hover:text-crimson py-1" href="#gallery">Gallery</a>
+<a class="block text-gray-300 hover:text-crimson py-1" href="#location">Location</a>
+<a class="block text-gray-300 hover:text-crimson py-1" href="#faq">FAQs</a>
+</nav>
+</header>
+<!-- END: MobileHeader -->
+<!-- BEGIN: HeroSection -->
+<section class="relative pt-24 pb-12 px-4 text-center overflow-hidden min-h-[92vh] flex flex-col justify-center items-center" id="hero">
+<!-- Atmospheric Background Effects -->
+<div class="absolute inset-0 -z-10 pointer-events-none">
+<div class="absolute top-10 left-1/2 -translate-x-1/2 w-80 h-80 bg-crimson/25 rounded-full blur-[100px]"></div>
+<div class="absolute top-44 left-1/4 w-72 h-72 bg-purple-700/20 rounded-full blur-[90px]"></div>
+<!-- Spooky Full Moon Silhouette backdrop -->
+<div class="absolute top-16 left-1/2 -translate-x-1/2 w-48 h-48 rounded-full border border-purple-500/10 bg-gradient-to-b from-purple-300/10 via-red-900/5 to-transparent blur-sm"></div>
+</div>
+<div class="max-w-md mx-auto w-full flex flex-col items-center">
+<!-- Tag badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 text-[11px] font-semibold text-purple-200 tracking-widest uppercase mb-4 shadow-sm backdrop-blur-sm">
+<i class="fa-solid fa-moon text-spooky-orange text-[10px]"></i>
+<span>WELCOME TO</span>
+</div>
+<!-- Main Horror Title -->
+<h1 class="font-cinzel text-[38px] leading-[1.05] tracking-tight font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-red-100 to-crimson glow-crimson-text uppercase">
+        HAUNTED<br/>
+<span class="text-white drop-shadow-[0_4px_16px_rgba(255,26,64,0.9)]">NIGHT 2026</span>
+</h1>
+<p class="font-cinzel text-[11px] tracking-[0.22em] text-red-300/90 font-bold uppercase mt-3 mb-5">
+        The City's Ultimate Halloween Experience
+      </p>
+<!-- Event Badges (Date & Location) -->
+<div class="w-full flex flex-col gap-2 mb-6 text-xs text-gray-300 font-medium">
+<div class="flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-purple-950/40 border border-purple-800/20">
+<i class="fa-regular fa-calendar-check text-crimson"></i>
+<span>31 OCTOBER 2026 <span class="text-gray-500 mx-1">|</span> 8:00 PM - 2:00 AM</span>
+</div>
+<div class="flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-purple-950/40 border border-purple-800/20">
+<i class="fa-solid fa-location-dot text-spooky-orange"></i>
+<span>THE GRAND ARENA <span class="text-gray-500 mx-1">|</span> LAHORE, PAKISTAN</span>
+</div>
+</div>
+<!-- Countdown Timer Component (4 cards) -->
+<div class="grid grid-cols-4 gap-2 w-full mb-7" data-purpose="countdown-timer">
+<!-- Days -->
+<div class="bg-[#120f1e]/90 border border-purple-500/20 rounded-xl p-2.5 shadow-md flex flex-col items-center">
+<span class="font-cinzel text-xl font-bold text-white tracking-wider">32</span>
+<span class="text-[9px] uppercase tracking-widest text-purple-300 font-semibold mt-0.5">DAYS</span>
+</div>
+<!-- Hours -->
+<div class="bg-[#120f1e]/90 border border-purple-500/20 rounded-xl p-2.5 shadow-md flex flex-col items-center">
+<span class="font-cinzel text-xl font-bold text-white tracking-wider">14</span>
+<span class="text-[9px] uppercase tracking-widest text-purple-300 font-semibold mt-0.5">HOURS</span>
+</div>
+<!-- Mins -->
+<div class="bg-[#120f1e]/90 border border-purple-500/20 rounded-xl p-2.5 shadow-md flex flex-col items-center">
+<span class="font-cinzel text-xl font-bold text-white tracking-wider">27</span>
+<span class="text-[9px] uppercase tracking-widest text-purple-300 font-semibold mt-0.5">MINUTES</span>
+</div>
+<!-- Secs -->
+<div class="bg-[#120f1e]/90 border border-purple-500/20 rounded-xl p-2.5 shadow-md flex flex-col items-center">
+<span class="font-cinzel text-xl font-bold text-crimson tracking-wider">16</span>
+<span class="text-[9px] uppercase tracking-widest text-red-400 font-semibold mt-0.5">SECONDS</span>
+</div>
+</div>
+<!-- Main CTA Button -->
+<a class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#ff1844] to-[#e60033] hover:from-crimson-hover hover:to-red-700 text-white font-cinzel font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-lg shadow-crimson/40 active:scale-[0.98] transition-all" href="#tickets">
+<i class="fa-solid fa-ticket"></i>
+<span>GET YOUR TICKETS</span>
+</a>
+<!-- Ghost / bat subtle icon -->
+<div class="mt-6 text-purple-400/40 text-sm">
+<i class="fa-solid fa-ghost animate-bounce"></i>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: EventHighlights -->
+<section class="py-12 px-4 border-t border-purple-900/20 relative" id="highlights">
+<div class="max-w-md mx-auto">
+<div class="text-center mb-7">
+<h2 class="font-cinzel text-2xl font-bold tracking-wider text-white uppercase">
+          EVENT HIGHLIGHTS
+        </h2>
+<div class="w-12 h-0.5 bg-crimson mx-auto my-2 rounded-full"></div>
+<p class="text-[11px] text-gray-400 uppercase tracking-widest">
+          More than just a party — it's an experience.
+        </p>
+</div>
+<!-- 2x2 Grid of Highlights Cards -->
+<div class="grid grid-cols-2 gap-3" data-purpose="highlights-grid">
+<!-- Highlight 1: Haunted House -->
+<div class="glow-card rounded-2xl p-4 flex flex-col items-center text-center">
+<div class="w-11 h-11 rounded-xl bg-purple-900/40 border border-purple-500/30 flex items-center justify-center text-purple-300 text-lg mb-3 shadow-inner">
+<i class="fa-solid fa-dungeon"></i>
+</div>
+<h3 class="font-cinzel text-xs font-bold uppercase text-white mb-1 tracking-wide">
+            HAUNTED HOUSE
+          </h3>
+<p class="text-[10px] text-gray-400 leading-relaxed">
+            Face your fears in our immersive haunted maze with live monsters.
+          </p>
+</div>
+<!-- Highlight 2: Live DJ -->
+<div class="glow-card rounded-2xl p-4 flex flex-col items-center text-center">
+<div class="w-11 h-11 rounded-xl bg-crimson/20 border border-crimson/30 flex items-center justify-center text-crimson text-lg mb-3 shadow-inner">
+<i class="fa-solid fa-music"></i>
+</div>
+<h3 class="font-cinzel text-xs font-bold uppercase text-white mb-1 tracking-wide">
+            LIVE DJ
+          </h3>
+<p class="text-[10px] text-gray-400 leading-relaxed">
+            Top DJs, non-stop heavy bass drops and hypnotic rave lights all night.
+          </p>
+</div>
+<!-- Highlight 3: Costume Contest -->
+<div class="glow-card rounded-2xl p-4 flex flex-col items-center text-center">
+<div class="w-11 h-11 rounded-xl bg-purple-900/40 border border-purple-500/30 flex items-center justify-center text-purple-300 text-lg mb-3 shadow-inner">
+<i class="fa-solid fa-masks-theater"></i>
+</div>
+<h3 class="font-cinzel text-xs font-bold uppercase text-white mb-1 tracking-wide">
+            COSTUME CONTEST
+          </h3>
+<p class="text-[10px] text-gray-400 leading-relaxed">
+            Best creative &amp; spooky costumes win huge cash prizes and trophy.
+          </p>
+</div>
+<!-- Highlight 4: Food & Drinks -->
+<div class="glow-card rounded-2xl p-4 flex flex-col items-center text-center">
+<div class="w-11 h-11 rounded-xl bg-amber-900/30 border border-spooky-orange/40 flex items-center justify-center text-spooky-orange text-lg mb-3 shadow-inner">
+<i class="fa-solid fa-martini-glass-citrus"></i>
+</div>
+<h3 class="font-cinzel text-xs font-bold uppercase text-white mb-1 tracking-wide">
+            FOOD &amp; DRINKS
+          </h3>
+<p class="text-[10px] text-gray-400 leading-relaxed">
+            Delicious food trucks, smoking spooky witch brews &amp; festival street eats.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: EventHighlights -->
+<!-- BEGIN: ExploreExperience -->
+<section class="py-12 px-4 border-t border-purple-900/20 bg-gradient-to-b from-[#07060b] via-[#0d0a17] to-[#07060b]" id="experience">
+<div class="max-w-md mx-auto">
+<div class="text-center mb-6">
+<h2 class="font-cinzel text-2xl font-bold tracking-wider text-white uppercase">
+          EXPLORE THE EXPERIENCE
+        </h2>
+<div class="w-12 h-0.5 bg-crimson mx-auto my-2 rounded-full"></div>
+<p class="text-[11px] text-gray-400 tracking-wider">
+          Step into a world of thrills, mystery and unforgettable moments.
+        </p>
+</div>
+<!-- Experience Cards (Mobile Stack / Swipe) -->
+<div class="space-y-4" data-purpose="experience-cards">
+<!-- Experience 1 -->
+<article class="glow-card rounded-2xl overflow-hidden group">
+<div class="relative h-40 bg-[#161226] overflow-hidden">
+<img alt="The Haunted Mansion Attraction" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0t1molp5VlNeY4f-dSokmOADrch9WN3loh7eQWLz5lx8XvB7QUPzcbUVvcYwGUU087Er2iaPHoD9jDcwnxpRNWV4mnOgvr9BM3lwmqUtnxkvPgLQBio19WJfd19AnAXpascDF-DEuYJNO_M9Ezmv6bCd3I7CCl1HYsjHAL5vfnTXXt9eTKnikkFdJD_cvdCd2xFMavVBQDqR6yOROcehwqyFhYdZ6_aOQEIVLldvj7UxiXBon6SL4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#11101a] via-transparent to-transparent"></div>
+<span class="absolute top-3 right-3 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded bg-black/60 border border-purple-500/30 text-purple-200">
+              Zone A
+            </span>
+</div>
+<div class="p-4 pt-1">
+<h3 class="font-cinzel text-base font-bold text-white uppercase mb-1">
+              The Haunted Mansion
+            </h3>
+<p class="text-xs text-gray-400 mb-3">
+              Can you survive the darkness? Navigate labyrinth corridors haunted by forgotten specters.
+            </p>
+<a class="inline-flex items-center gap-1.5 text-xs font-semibold text-crimson hover:text-red-400" href="#tickets">
+<span>Explore</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+</a>
+</div>
+</article>
+<!-- Experience 2 -->
+<article class="glow-card rounded-2xl overflow-hidden group">
+<div class="relative h-40 bg-[#161226] overflow-hidden">
+<img alt="The Rave Zone Stage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6Xk1OeiX84aP9BqG341vgegIIZmcIxL4jsTo3EaB2xwhU63NsWtHGlsqaxR0q8a0IAm4iWVSiL2VY_Y8CVB_f_a-KqxIyPSYYzVIAtu9DWqNuRFoRMAEBqx1DJ5sj71pSK_UxZBEvA_wMkbAxMWqQMN4DFBPyWt44ZpMhrN8ZzKcQMFVwQl6gQBlIBoxiG0yAbu0bVM4TsmjDPHhIwMELCSpCOjkeogW2Efw1jcIEH2rBa-owIfyT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#11101a] via-transparent to-transparent"></div>
+<span class="absolute top-3 right-3 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded bg-crimson/60 border border-crimson text-white">
+              Stage
+            </span>
+</div>
+<div class="p-4 pt-1">
+<h3 class="font-cinzel text-base font-bold text-white uppercase mb-1">
+              The Rave Zone
+            </h3>
+<p class="text-xs text-gray-400 mb-3">
+              Music. Lights. Madness. Electrifying lasers, cryogenic fog, and earth-shattering bass drops.
+            </p>
+<a class="inline-flex items-center gap-1.5 text-xs font-semibold text-crimson hover:text-red-400" href="#tickets">
+<span>Explore</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+</a>
+</div>
+</article>
+<!-- Experience 3 -->
+<article class="glow-card rounded-2xl overflow-hidden group">
+<div class="relative h-40 bg-[#161226] overflow-hidden">
+<img alt="The Cursed Forest Walk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdzJHAxx0hf9IR7RuyuQmADlZm3N_wZi1m7R3V_qOgqjOGtMGpwX17cZKGq-jWjzKmgJk-7mjKNWjNdld6LIVGSI-0HNVxDTKirLuldWjqKQ2n8IjDlVTw4fXeOnxjnL-kKSECoN_Xz_R8PmyX_-FTNz7NoT_cBWbWT9BUc3UDfbLGrTbL8QLGfFF78VnokZPG1vRbp1FYfIemhd7vg3f7eaQElvgORSi7jKi4gPIHFdsKWnTex2HS"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#11101a] via-transparent to-transparent"></div>
+<span class="absolute top-3 right-3 text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded bg-black/60 border border-purple-500/30 text-purple-200">
+              Zone B
+            </span>
+</div>
+<div class="p-4 pt-1">
+<h3 class="font-cinzel text-base font-bold text-white uppercase mb-1">
+              The Cursed Forest
+            </h3>
+<p class="text-xs text-gray-400 mb-3">
+              Not everything is human. Foggy trails, cursed trees, and creatures lurking in the mist.
+            </p>
+<a class="inline-flex items-center gap-1.5 text-xs font-semibold text-crimson hover:text-red-400" href="#tickets">
+<span>Explore</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- END: ExploreExperience -->
+<!-- BEGIN: TicketPricing -->
+<section class="py-12 px-4 border-t border-purple-900/20 relative" id="tickets">
+<div class="max-w-md mx-auto">
+<div class="text-center mb-6">
+<h2 class="font-cinzel text-2xl font-bold tracking-wider text-white uppercase">
+          CHOOSE YOUR TICKET
+        </h2>
+<div class="w-12 h-0.5 bg-crimson mx-auto my-2 rounded-full"></div>
+<p class="text-[11px] text-gray-400 tracking-wider">
+          Different experiences. Same unforgettable night.
+        </p>
+</div>
+<!-- Ticket Carousel Container (Mobile Optimized) -->
+<div class="relative" data-purpose="tickets-carousel-wrapper">
+<!-- VIP Card (Featured Most Popular) -->
+<div class="glow-card-vip rounded-2xl p-5 relative overflow-hidden mb-4">
+<!-- Tag -->
+<div class="absolute top-0 right-0 bg-crimson text-white text-[9px] font-bold uppercase tracking-widest px-4 py-1 rounded-bl-xl shadow-md">
+            MOST POPULAR
+          </div>
+<div class="text-center mt-2 mb-4">
+<div class="w-10 h-10 mx-auto rounded-full bg-crimson/20 border border-crimson/40 flex items-center justify-center text-crimson mb-2">
+<i class="fa-solid fa-crown text-base"></i>
+</div>
+<h3 class="font-cinzel text-xl font-black text-white tracking-widest">
+              VIP
+            </h3>
+<div class="mt-2 text-2xl font-extrabold text-white">
+<span class="text-xs text-crimson font-medium mr-1 font-sans">PKR</span>3,000
+            </div>
+</div>
+<!-- Feature items -->
+<ul class="space-y-2 text-xs text-gray-300 border-t border-red-950/60 pt-4 mb-5">
+<li class="flex items-center gap-2">
+<i class="fa-solid fa-circle-check text-crimson text-xs"></i>
+<span>Event Entry &amp; Haunted Maze</span>
+</li>
+<li class="flex items-center gap-2">
+<i class="fa-solid fa-circle-check text-crimson text-xs"></i>
+<span>VIP Lounge &amp; Deck Access</span>
+</li>
+<li class="flex items-center gap-2">
+<i class="fa-solid fa-circle-check text-crimson text-xs"></i>
+<span>Priority Fast-Track Queue</span>
+</li>
+<li class="flex items-center gap-2">
+<i class="fa-solid fa-circle-check text-crimson text-xs"></i>
+<span>Exclusive Perks &amp; Merch Badge</span>
+</li>
+</ul>
+<button class="w-full py-3 rounded-xl bg-crimson hover:bg-crimson-hover text-white font-cinzel font-bold text-xs uppercase tracking-wider shadow-lg shadow-crimson/40 transition-all">
+            BUY NOW
+          </button>
+</div>
+<!-- Tier Selector / Secondary Cards Stack -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Regular Tier -->
+<div class="glow-card rounded-2xl p-4 text-center flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 mx-auto rounded-full bg-purple-900/30 border border-purple-500/20 flex items-center justify-center text-purple-300 mb-2">
+<i class="fa-solid fa-ticket-simple text-xs"></i>
+</div>
+<h4 class="font-cinzel text-sm font-bold text-white">REGULAR</h4>
+<div class="mt-1 text-lg font-bold text-gray-200">
+<span class="text-[10px] text-gray-400 mr-0.5">PKR</span>1,500
+              </div>
+<ul class="text-[10px] text-gray-400 space-y-1 mt-3 text-left">
+<li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-purple-400 text-[9px]"></i> Event Entry</li>
+<li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-purple-400 text-[9px]"></i> Access All Areas</li>
+<li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-purple-400 text-[9px]"></i> Standard Queue</li>
+</ul>
+</div>
+<button class="w-full mt-4 py-2 rounded-lg bg-purple-950/60 border border-purple-600/30 text-white font-cinzel text-[10px] font-bold uppercase hover:bg-purple-900/80 transition-colors">
+              SELECT
+            </button>
+</div>
+<!-- Premium Tier -->
+<div class="glow-card rounded-2xl p-4 text-center flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 mx-auto rounded-full bg-purple-900/30 border border-purple-500/20 flex items-center justify-center text-purple-300 mb-2">
+<i class="fa-solid fa-star text-xs"></i>
+</div>
+<h4 class="font-cinzel text-sm font-bold text-white">PREMIUM</h4>
+<div class="mt-1 text-lg font-bold text-gray-200">
+<span class="text-[10px] text-gray-400 mr-0.5">PKR</span>5,000
+              </div>
+<ul class="text-[10px] text-gray-400 space-y-1 mt-3 text-left">
+<li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-purple-400 text-[9px]"></i> VIP Lounge</li>
+<li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-purple-400 text-[9px]"></i> Priority Fast Pass</li>
+<li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-purple-400 text-[9px]"></i> Free Drink Voucher</li>
+</ul>
+</div>
+<button class="w-full mt-4 py-2 rounded-lg bg-purple-950/60 border border-purple-600/30 text-white font-cinzel text-[10px] font-bold uppercase hover:bg-purple-900/80 transition-colors">
+              SELECT
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TicketPricing -->
+<!-- BEGIN: EventGallery -->
+<section class="py-12 px-4 border-t border-purple-900/20 bg-[#06050a]" id="gallery">
+<div class="max-w-md mx-auto">
+<div class="flex items-center justify-between mb-5">
+<div>
+<h2 class="font-cinzel text-xl font-bold tracking-wider text-white uppercase">
+            EVENT GALLERY
+          </h2>
+<p class="text-[10px] text-gray-400 uppercase tracking-widest mt-0.5">
+            Relive the moments. Feel the energy.
+          </p>
+</div>
+<!-- Simple Carousel Nav buttons mockup -->
+<div class="flex items-center gap-1.5">
+<button aria-label="Previous image" class="w-7 h-7 rounded-full bg-purple-950/40 border border-purple-700/30 text-xs text-gray-300 flex items-center justify-center active:scale-95">
+<i class="fa-solid fa-chevron-left text-[10px]"></i>
+</button>
+<button aria-label="Next image" class="w-7 h-7 rounded-full bg-purple-950/40 border border-purple-700/30 text-xs text-gray-300 flex items-center justify-center active:scale-95">
+<i class="fa-solid fa-chevron-right text-[10px]"></i>
+</button>
+</div>
+</div>
+<!-- 2-Column Responsive Image Grid -->
+<div class="grid grid-cols-2 gap-2.5" data-purpose="gallery-grid">
+<div class="rounded-xl overflow-hidden aspect-[4/3] bg-purple-950/30 border border-purple-800/20 group">
+<img alt="Halloween party crowd" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4LyUZ_TocvMcHUvAPlUV-TNu1Qyj0WV-2n6_4_eqCC9ut4GuQPaWBxYEeGxMKWil1xOnxowCE6tysEKjE5spTSF_1UptmUFDb_mPJbafY58klc9cDGGlQ_jNfwy49rIIvbInoLBHwEQCIrGki6l6uy93YHXNselU1mjb9MR_pAtTsYye9VdeE_Xz78HvXJ2XkHvFvQeUhhFMW0ynuLFl_IMcGdFDtrZPI7mI3btpuS-dNi8r3kLYy"/>
+</div>
+<div class="rounded-xl overflow-hidden aspect-[4/3] bg-purple-950/30 border border-purple-800/20 group">
+<img alt="Laser stage light show" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDToyYJSvfoRDhvdK_LqTVNkBQXAzqRD4I3i9z39wB44f73EtWHkb2a7xLgvl622A0xVkxRzjiRzcJrVGeFhBIvKnQOjGx_p6TRrlthkZfFLZompzgwGfrvQ406EqBW1GmtZRfeq7mUhedCsXvraBHJ4Jfg2-f3L4Owsdx_G2N05HBeOEBQnB9hc3Uwvz7i-0gREWp1r5HFP1WXoQqkCq9OkTTJve5mKtVjrnKqnlpDETc5McxoCSC"/>
+</div>
+<div class="rounded-xl overflow-hidden aspect-[4/3] bg-purple-950/30 border border-purple-800/20 group">
+<img alt="Glowing carved pumpkins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOIPgNBjxgKfLEHOcGJdjU7Qx_sgX8gbGGBVJuTRGM2RQIkJ5O3PZIG5loMjnhCBHwa9k-3yZmMKTuw0qOcUMduHp9vchlPUqowtnIkL4Vnj6Pi-HN9AxBveeSBfDHWcrOjpvzebXPw1SnXcvPYGc9HPqlGTLd7-rbPae5Ph9nFmgRnRa1vZsSOSonC3a4_-CWgh6Yv_OVkWV0Xp_CwwENt3NZOI9eKC7lfCMX5o9SasIAnTmLUHMh"/>
+</div>
+<div class="rounded-xl overflow-hidden aspect-[4/3] bg-purple-950/30 border border-purple-800/20 group">
+<img alt="Theme cocktail bar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ0F6ledg370MjXvkTrEQsQ-0LhVc2Xyj0lnvwMWRP5gh9uLtPl6Fg45mMFvgmm3olejbpEkXgzGITB1GIbx_m97Q8tR6OiFG6Z38tpzocflGuPMxuWHTciuj5VEsMMIyrA9dQAp4x0gR9GHMahz3HlC6jh9jY0n5Fxcjx6pLIeelwqxmp_wakt07ziyFe_S6kX9wdODgnqWZ5W-WJPA_1ByuekymNf7VDwARVoRsy-zHA4gK68HTp"/>
+</div>
+<div class="rounded-xl overflow-hidden aspect-[4/3] bg-purple-950/30 border border-purple-800/20 group">
+<img alt="Costume contest winners" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIZ50NOxlN8zpweVNKQhFk8X2Cye1GbLdEieK__4ovAt1QpsJYn8Q65xCxOKCC__WwYbJK7eXxFNj2ikgBl_dCaXYmlz-cbHfIG0aRfmeF6fmyh4OqI_UagGsLw86YKsiRVqjjUCB6pouOU5KnWQ824bLjqkRll5VYZcakgnzSXHCyqsaF4yPwz_Wl_iIrT9bTdyX6t9HrxpwMCSQUb6BlYFm0TkRg4yP6i2pXfEeQnVx57z2BPl7h"/>
+</div>
+<div class="rounded-xl overflow-hidden aspect-[4/3] bg-purple-950/30 border border-purple-800/20 group">
+<img alt="DJ performing live" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQdsEUasoPY_Xwp9jU0tXwwz0bH3o39zPqBtuNSK_7kS1-QjlIn9BdK12ObKsPQD0tiPVaOa3TSunwSFcRabgEkeyp6yOkZETzdUg_Nuk5r9yib8L3Cq7ZQuUcBg2M1E6Bdsr1-B8ErUo8TeOXFEGL2p4YbfHholYLM_M3KquBKMNbU0kpSPxIbUXaYmPGHgId0GHzvTa5z9xsJMEitzS0EwtBt81Z-T8GFJg6kbLZvs9bcj7CKY_W"/>
+</div>
+</div>
+</div>
+</section>
+<!-- END: EventGallery -->
+<!-- BEGIN: GuestReviews -->
+<section class="py-12 px-4 border-t border-purple-900/20" id="reviews">
+<div class="max-w-md mx-auto">
+<div class="text-center mb-6">
+<h2 class="font-cinzel text-2xl font-bold tracking-wider text-white uppercase">
+          WHAT OUR GUESTS SAY
+        </h2>
+<div class="w-12 h-0.5 bg-crimson mx-auto my-2 rounded-full"></div>
+<p class="text-[11px] text-gray-400 tracking-wider">
+          Real people. Real experiences.
+        </p>
+</div>
+<!-- Mobile Testimonial Card with Carousel Dots -->
+<div class="glow-card rounded-2xl p-5 relative" data-purpose="testimonial-card">
+<!-- 5 Spooky Gold Stars -->
+<div class="flex items-center gap-1 text-spooky-orange text-xs mb-3">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+<blockquote class="text-xs text-gray-300 leading-relaxed italic mb-4">
+          "Best Halloween event I've ever been to! The atmosphere was insane, the haunted maze was genuinely terrifying, and the team did an amazing job!"
+        </blockquote>
+<!-- Reviewer info -->
+<div class="flex items-center gap-3 pt-3 border-t border-purple-900/40">
+<div class="w-9 h-9 rounded-full bg-gradient-to-tr from-crimson to-purple-600 text-white font-cinzel font-bold text-xs flex items-center justify-center">
+            AS
+          </div>
+<div>
+<h4 class="font-cinzel font-bold text-xs text-white">Areeba S.</h4>
+<p class="text-[10px] text-gray-400">Verified Attendee • Lahore</p>
+</div>
+</div>
+</div>
+<!-- Pagination Indicators -->
+<div class="flex items-center justify-center gap-2 mt-4">
+<span class="w-2 h-2 rounded-full bg-crimson"></span>
+<span class="w-2 h-2 rounded-full bg-purple-900"></span>
+<span class="w-2 h-2 rounded-full bg-purple-900"></span>
+</div>
+</div>
+</section>
+<!-- END: GuestReviews -->
+<!-- BEGIN: EventLocation -->
+<section class="py-12 px-4 border-t border-purple-900/20 bg-gradient-to-b from-[#07060b] to-[#0c0915]" id="location">
+<div class="max-w-md mx-auto">
+<div class="text-center mb-6">
+<h2 class="font-cinzel text-2xl font-bold tracking-wider text-white uppercase">
+          EVENT LOCATION
+        </h2>
+<div class="w-12 h-0.5 bg-crimson mx-auto my-2 rounded-full"></div>
+<p class="text-[11px] text-gray-400 tracking-wider">
+          Find us at the heart of the scary.
+        </p>
+</div>
+<!-- Venue Details Card -->
+<div class="glow-card rounded-2xl p-5 mb-4" data-purpose="venue-info">
+<span class="text-[10px] font-bold text-crimson tracking-widest uppercase flex items-center gap-1.5 mb-1">
+<i class="fa-solid fa-shield-halved"></i> VENUE PARTNER
+        </span>
+<h3 class="font-cinzel text-lg font-bold text-white uppercase mb-1">
+          THE GRAND ARENA
+        </h3>
+<p class="text-xs text-gray-400 mb-4">
+          Lahore, Pakistan
+        </p>
+<div class="space-y-2 text-xs border-t border-purple-900/40 pt-3 mb-4">
+<div class="flex justify-between">
+<span class="text-gray-400">Gates Open:</span>
+<span class="text-white font-medium">8:00 PM</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-400">Event Time:</span>
+<span class="text-white font-medium">8:00 PM - 2:00 AM</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-400">Parking:</span>
+<span class="text-emerald-400 font-medium">Available On-site</span>
+</div>
+</div>
+<a class="w-full py-2.5 rounded-xl bg-purple-950/60 border border-crimson/50 hover:bg-crimson/20 text-white font-cinzel text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<i class="fa-solid fa-diamond-turn-right text-crimson"></i>
+<span>GET DIRECTIONS</span>
+</a>
+</div>
+<!-- Dark Stylized Mock Map -->
+<div class="h-44 rounded-2xl bg-[#0e0c18] border border-purple-900/40 relative overflow-hidden flex items-center justify-center">
+<!-- Visual Grid Pattern -->
+<div class="absolute inset-0 bg-[radial-gradient(#9333ea_1px,transparent_1px)] [background-size:16px_16px] opacity-15"></div>
+<div class="relative text-center px-4">
+<div class="w-10 h-10 mx-auto rounded-full bg-crimson/30 border border-crimson flex items-center justify-center text-white mb-2 shadow-lg shadow-crimson/40 animate-pulse">
+<i class="fa-solid fa-location-dot text-base text-crimson"></i>
+</div>
+<h4 class="font-cinzel text-xs font-bold text-white">THE GRAND ARENA</h4>
+<p class="text-[10px] text-gray-400">Lahore, Pakistan</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: EventLocation -->
+<!-- BEGIN: FAQSection -->
+<section class="py-12 px-4 border-t border-purple-900/20" id="faq">
+<div class="max-w-md mx-auto">
+<div class="text-center mb-6">
+<h2 class="font-cinzel text-xl font-bold tracking-wider text-white uppercase">
+          FREQUENTLY ASKED QUESTIONS
+        </h2>
+<div class="w-12 h-0.5 bg-crimson mx-auto my-2 rounded-full"></div>
+<p class="text-[11px] text-gray-400 tracking-wider">
+          Got questions? We've got answers.
+        </p>
+</div>
+<!-- Accordion Items (Mobile Touch Optimized) -->
+<div class="space-y-2.5" data-purpose="faq-accordion">
+<!-- Item 1 -->
+<div class="glow-card rounded-xl overflow-hidden">
+<button class="w-full p-3.5 text-left flex items-center justify-between text-xs font-medium text-white hover:text-crimson transition-colors" onclick="toggleFaq('faq-1')">
+<span>What is the age limit for the event?</span>
+<i class="fa-solid fa-plus text-[10px] text-purple-400 transition-transform duration-300" id="faq-1-icon"></i>
+</button>
+<div class="hidden px-3.5 pb-3 text-[11px] text-gray-400 border-t border-purple-950/50 pt-2 leading-relaxed" id="faq-1">
+            The event is strictly 18+. Physical valid original CNIC or photo ID is mandatory at entry checkpoints.
+          </div>
+</div>
+<!-- Item 2 -->
+<div class="glow-card rounded-xl overflow-hidden">
+<button class="w-full p-3.5 text-left flex items-center justify-between text-xs font-medium text-white hover:text-crimson transition-colors" onclick="toggleFaq('faq-2')">
+<span>Are costumes mandatory?</span>
+<i class="fa-solid fa-plus text-[10px] text-purple-400 transition-transform duration-300" id="faq-2-icon"></i>
+</button>
+<div class="hidden px-3.5 pb-3 text-[11px] text-gray-400 border-t border-purple-950/50 pt-2 leading-relaxed" id="faq-2">
+            Costumes are highly encouraged to immerse yourself in the experience and participate in the grand costume contest with cash rewards!
+          </div>
+</div>
+<!-- Item 3 -->
+<div class="glow-card rounded-xl overflow-hidden">
+<button class="w-full p-3.5 text-left flex items-center justify-between text-xs font-medium text-white hover:text-crimson transition-colors" onclick="toggleFaq('faq-3')">
+<span>Is the event rain or shine?</span>
+<i class="fa-solid fa-plus text-[10px] text-purple-400 transition-transform duration-300" id="faq-3-icon"></i>
+</button>
+<div class="hidden px-3.5 pb-3 text-[11px] text-gray-400 border-t border-purple-950/50 pt-2 leading-relaxed" id="faq-3">
+            Yes, Nightfall Haunted Night 2026 is an all-weather event featuring covered arenas, indoor zones, and sheltered main stages.
+          </div>
+</div>
+<!-- Item 4 -->
+<div class="glow-card rounded-xl overflow-hidden">
+<button class="w-full p-3.5 text-left flex items-center justify-between text-xs font-medium text-white hover:text-crimson transition-colors" onclick="toggleFaq('faq-4')">
+<span>Will there be parking available?</span>
+<i class="fa-solid fa-plus text-[10px] text-purple-400 transition-transform duration-300" id="faq-4-icon"></i>
+</button>
+<div class="hidden px-3.5 pb-3 text-[11px] text-gray-400 border-t border-purple-950/50 pt-2 leading-relaxed" id="faq-4">
+            Yes, dedicated on-site secure parking with surveillance will be available at The Grand Arena.
+          </div>
+</div>
+<!-- Item 5 -->
+<div class="glow-card rounded-xl overflow-hidden">
+<button class="w-full p-3.5 text-left flex items-center justify-between text-xs font-medium text-white hover:text-crimson transition-colors" onclick="toggleFaq('faq-5')">
+<span>Can I get a refund if I can't attend?</span>
+<i class="fa-solid fa-plus text-[10px] text-purple-400 transition-transform duration-300" id="faq-5-icon"></i>
+</button>
+<div class="hidden px-3.5 pb-3 text-[11px] text-gray-400 border-t border-purple-950/50 pt-2 leading-relaxed" id="faq-5">
+            All tickets are non-refundable. However, tickets are transferable to friends up to 48 hours prior to the festival.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: FAQSection -->
+<!-- BEGIN: NewsletterSection -->
+<section class="py-12 px-4 border-t border-purple-900/20 bg-gradient-to-b from-[#090810] to-[#120b1f]" id="newsletter">
+<div class="max-w-md mx-auto">
+<div class="glow-card rounded-2xl p-6 text-center border-purple-600/30">
+<div class="text-spooky-orange text-2xl mb-2">
+<i class="fa-solid fa-envelope-open-text"></i>
+</div>
+<h2 class="font-cinzel text-xl font-bold tracking-wider text-white uppercase mb-1">
+          STAY IN THE LOOP
+        </h2>
+<p class="text-[11px] text-gray-400 mb-5 leading-relaxed">
+          Get the latest artist line-up announcements, special flash deals, and insider event news.
+        </p>
+<!-- Newsletter form -->
+<form class="space-y-2.5" onsubmit="event.preventDefault(); alert('Subscribed to Nightfall updates!');">
+<input class="w-full px-4 py-3 rounded-xl bg-[#090710] border border-purple-800/40 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-crimson focus:ring-1 focus:ring-crimson" placeholder="Enter your email address" required="" type="email"/>
+<button class="w-full py-3 rounded-xl bg-crimson hover:bg-crimson-hover text-white font-cinzel font-bold text-xs uppercase tracking-wider shadow-md shadow-crimson/30 transition-all" type="submit">
+            SUBSCRIBE
+          </button>
+</form>
+<div class="mt-4 text-purple-400/40 text-xs">
+<i class="fa-solid fa-spider"></i>
+</div>
+</div>
+</div>
+</section>
+<!-- END: NewsletterSection -->
+<!-- BEGIN: Footer -->
+<footer class="pt-10 pb-8 px-4 border-t border-purple-950/40 bg-[#050408] text-center">
+<div class="max-w-md mx-auto">
+<!-- Footer Brand Logo -->
+<a class="inline-flex items-center gap-2 mb-3" href="#">
+<span class="w-6 h-6 rounded-full bg-crimson flex items-center justify-center text-[10px] text-white">
+<i class="fa-solid fa-moon"></i>
+</span>
+<span class="font-cinzel text-lg tracking-[0.25em] font-extrabold text-white">
+          NIGHT<span class="text-crimson">FALL</span>
+</span>
+</a>
+<p class="text-xs text-gray-400 italic mb-5">
+        "More than an event, it's a night to remember. Turn your nightmares into memories."
+      </p>
+<!-- Social Icons -->
+<div class="flex items-center justify-center gap-3 mb-6" data-purpose="social-links">
+<a class="w-8 h-8 rounded-full bg-purple-950/40 border border-purple-800/30 flex items-center justify-center text-xs text-gray-300 hover:text-crimson transition-colors" href="#">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+<a class="w-8 h-8 rounded-full bg-purple-950/40 border border-purple-800/30 flex items-center justify-center text-xs text-gray-300 hover:text-crimson transition-colors" href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+<a class="w-8 h-8 rounded-full bg-purple-950/40 border border-purple-800/30 flex items-center justify-center text-xs text-gray-300 hover:text-crimson transition-colors" href="#">
+<i class="fa-brands fa-x-twitter"></i>
+</a>
+<a class="w-8 h-8 rounded-full bg-purple-950/40 border border-purple-800/30 flex items-center justify-center text-xs text-gray-300 hover:text-crimson transition-colors" href="#">
+<i class="fa-brands fa-youtube"></i>
+</a>
+<a class="w-8 h-8 rounded-full bg-purple-950/40 border border-purple-800/30 flex items-center justify-center text-xs text-gray-300 hover:text-crimson transition-colors" href="#">
+<i class="fa-brands fa-tiktok"></i>
+</a>
+</div>
+<!-- Quick Links Grid -->
+<div class="grid grid-cols-2 gap-4 text-left text-xs mb-8 border-y border-purple-950/50 py-5">
+<div>
+<h5 class="font-cinzel text-gray-300 font-bold uppercase mb-2 text-[11px] tracking-wider">Quick Links</h5>
+<ul class="space-y-1.5 text-gray-400">
+<li><a class="hover:text-crimson transition-colors" href="#hero">Event</a></li>
+<li><a class="hover:text-crimson transition-colors" href="#experience">Experience</a></li>
+<li><a class="hover:text-crimson transition-colors" href="#tickets">Tickets</a></li>
+<li><a class="hover:text-crimson transition-colors" href="#gallery">Gallery</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-cinzel text-gray-300 font-bold uppercase mb-2 text-[11px] tracking-wider">Support</h5>
+<ul class="space-y-1.5 text-gray-400">
+<li><a class="hover:text-crimson transition-colors" href="#">Contact Us</a></li>
+<li><a class="hover:text-crimson transition-colors" href="#">Terms &amp; Conditions</a></li>
+<li><a class="hover:text-crimson transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-crimson transition-colors" href="#">Refund Policy</a></li>
+</ul>
+</div>
+</div>
+<!-- Copyright & Gothic Quote -->
+<p class="text-[10px] text-gray-500 mb-1">
+        © 2026 Nightfall. All rights reserved.
+      </p>
+<p class="font-cinzel text-[9px] tracking-[0.25em] text-red-400/80 uppercase font-bold">
+        TURN YOUR NIGHTMARES INTO MEMORIES
+      </p>
+</div>
+</footer>
+<!-- END: Footer -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="mobile-navigation">
+    // Simple mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking on an anchor
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+<script data-purpose="faq-toggle">
+    // FAQ Accordion interaction
+    function toggleFaq(id) {
+      const element = document.getElementById(id);
+      const icon = document.getElementById(id + '-icon');
+      
+      const isOpen = !element.classList.contains('hidden');
+      
+      if (isOpen) {
+        element.classList.add('hidden');
+        icon.classList.remove('rotate-45');
+      } else {
+        element.classList.remove('hidden');
+        icon.classList.add('rotate-45');
+      }
+    }
+  </script>
+<!-- END: InteractiveScripts -->
+</body></html>

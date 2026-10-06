@@ -1,0 +1,802 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nightfall: Haunted Night 2026 | The Ultimate Halloween Experience</title>
+<!-- Google Fonts: Cinzel Decorative, Cinzel, Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&amp;family=Cinzel+Decorative:wght@700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Font Awesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            night: {
+              950: '#07060a',
+              900: '#0b0914',
+              850: '#110e1e',
+              800: '#171328',
+              700: '#231d3d'
+            },
+            crimson: {
+              400: '#ff3b56',
+              500: '#e61e38',
+              600: '#c51027',
+              700: '#9b081b'
+            },
+            spooky: {
+              purple: '#9d4edd',
+              violet: '#7b2cbf',
+              orange: '#ff6200',
+              amber: '#ff9100'
+            }
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            cinzelDeco: ['"Cinzel Decorative"', 'serif'],
+            sans: ['Inter', 'sans-serif']
+          },
+          boxShadow: {
+            'glow-red': '0 0 35px -5px rgba(230, 30, 56, 0.45)',
+            'glow-red-lg': '0 0 60px -5px rgba(230, 30, 56, 0.6)',
+            'glow-purple': '0 0 35px -5px rgba(157, 78, 221, 0.4)',
+            'inner-glow': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.1)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles: Atmospheric Glows & Utilities -->
+<style data-purpose="typography">
+    .font-horror-title {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 20px rgba(230, 30, 56, 0.8), 0 0 45px rgba(230, 30, 56, 0.4);
+    }
+    .text-blood-gradient {
+      background: linear-gradient(180deg, #ffffff 0%, #ff8a9b 25%, #ff2042 60%, #b30018 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-purple-glow {
+      text-shadow: 0 0 15px rgba(157, 78, 221, 0.7);
+    }
+  </style>
+<style data-purpose="atmosphere-decorations">
+    .bg-radial-vignette {
+      background: radial-gradient(circle at 50% 30%, rgba(139, 14, 38, 0.22) 0%, rgba(12, 10, 18, 0.95) 70%, #06050a 100%);
+    }
+    .glass-card {
+      background: rgba(18, 15, 28, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(157, 78, 221, 0.18);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(230, 30, 56, 0.5);
+      box-shadow: 0 0 30px -5px rgba(230, 30, 56, 0.35);
+      transform: translateY(-4px);
+    }
+    .blood-border-btn {
+      position: relative;
+      background: linear-gradient(135deg, #e61e38 0%, #9e0e22 100%);
+      box-shadow: 0 0 25px rgba(230, 30, 56, 0.5);
+    }
+    .blood-border-btn:hover {
+      box-shadow: 0 0 35px rgba(230, 30, 56, 0.8);
+      filter: brightness(1.1);
+    }
+    /* Ambient Fog animation */
+    @keyframes slow-drift {
+      0% { transform: translateX(-5%) translateY(0); }
+      50% { transform: translateX(5%) translateY(-10px); }
+      100% { transform: translateX(-5%) translateY(0); }
+    }
+    .fog-layer {
+      animation: slow-drift 18s ease-in-out infinite alternate;
+    }
+  </style>
+</head>
+<body class="bg-night-950 text-gray-200 font-sans antialiased overflow-x-hidden selection:bg-crimson-600 selection:text-white">
+<!-- BEGIN: NavigationBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-night-950/80 backdrop-blur-md border-b border-purple-900/25">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center space-x-3 group" data-purpose="brand-logo" href="#">
+<div class="w-10 h-10 rounded-full bg-crimson-600/20 border border-crimson-500/50 flex items-center justify-center text-crimson-400 group-hover:scale-105 transition-transform duration-300 shadow-glow-red">
+<i class="fa-solid fa-bat text-lg"></i>
+</div>
+<span class="font-cinzel text-2xl font-bold tracking-widest text-white flex items-center gap-1.5">
+          NIGHT<span class="text-crimson-500">FALL</span>
+</span>
+</a>
+<!-- Desktop Navigation Menu -->
+<nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wider uppercase text-gray-300">
+<a class="hover:text-crimson-400 transition-colors duration-200" href="#event">Event</a>
+<a class="hover:text-crimson-400 transition-colors duration-200" href="#experience">Experience</a>
+<a class="hover:text-crimson-400 transition-colors duration-200" href="#tickets">Tickets</a>
+<a class="hover:text-crimson-400 transition-colors duration-200" href="#gallery">Gallery</a>
+<a class="hover:text-crimson-400 transition-colors duration-200" href="#faq">FAQ</a>
+</nav>
+<!-- Primary Action CTA -->
+<div class="hidden sm:flex items-center">
+<a class="blood-border-btn px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase text-white flex items-center gap-2 transition duration-300" href="#tickets">
+<i class="fa-solid fa-ticket"></i>
+<span class="">BUY TICKETS</span>
+</a>
+</div>
+<!-- Mobile Menu Button -->
+<button aria-label="Toggle navigation" class="md:hidden text-gray-300 hover:text-white focus:outline-none text-2xl" id="mobile-menu-toggle">
+<i class="fa-solid fa-bars-staggered"></i>
+</button>
+</div>
+<!-- Mobile Nav Drawer -->
+<div class="hidden md:hidden bg-night-900 border-b border-purple-900/30 px-6 py-5 space-y-4" id="mobile-menu">
+<a class="block text-gray-300 hover:text-crimson-400 text-sm uppercase tracking-wider" href="#event">Event</a>
+<a class="block text-gray-300 hover:text-crimson-400 text-sm uppercase tracking-wider" href="#experience">Experience</a>
+<a class="block text-gray-300 hover:text-crimson-400 text-sm uppercase tracking-wider" href="#tickets">Tickets</a>
+<a class="block text-gray-300 hover:text-crimson-400 text-sm uppercase tracking-wider" href="#gallery">Gallery</a>
+<a class="block text-gray-300 hover:text-crimson-400 text-sm uppercase tracking-wider" href="#faq">FAQ</a>
+<a class="blood-border-btn block text-center py-2.5 rounded-full text-xs font-bold uppercase tracking-widest text-white mt-4" href="#tickets">
+        BUY TICKETS
+      </a>
+</div>
+</header>
+<!-- END: NavigationBar -->
+<main>
+<!-- BEGIN: HeroSection -->
+<section class="relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden bg-radial-vignette" id="event"><div class="absolute inset-0 z-0 pointer-events-none overflow-hidden"><video autoplay="" loop="" muted="" playsinline="" class="absolute inset-0 w-full h-full object-cover opacity-40"><source src="https://assets.mixkit.co/videos/preview/mixkit-smoke-and-lights-in-a-dark-background-42996-large.mp4" type="video/mp4"></video><div class="absolute inset-0 bg-gradient-to-b from-[#0a0612]/80 via-[#0a0612]/60 to-[#0a0612]"></div></div>
+<!-- Background Spooky Elements: Castle, Moon & Pumpkin Silhouette Layers -->
+<div class="absolute inset-0 pointer-events-none opacity-40 z-0 bg-cover bg-center mix-blend-screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCOEfhTpM7WD3RkjhIAlljDZC1ayP0ku94LoQ-YUsJm0WhuXMiEuksXgATq3ullyZ6MuZ3veBCGbifx9Gir7DonvPuZeU-7jcMCm80p1uDeBtcrWBV46n6jBxW14mSBl5yQm4gdLcZ7UBeby0KZ4_T5QX_a9rorGU8RADIBvygruulT7lCESHZcEObhd1ptcavR83UMVSXtiac9BzwdqYCZ9v_6AVVBtKBJx9LuxMDWbx0ATquQJTnf');"></div>
+<!-- Ambient Gradient Orbs -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-crimson-600/20 blur-[130px] rounded-full pointer-events-none"></div>
+<div class="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-purple-700/15 blur-[120px] rounded-full pointer-events-none"></div>
+<!-- Mist & Fog SVG / Graphic Representation -->
+<div class="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-night-950 via-night-950/80 to-transparent z-10"></div>
+<!-- Hero Main Content -->
+<div class="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center">
+<!-- Welcome Kicker Tag -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-crimson-500/40 bg-crimson-950/30 text-crimson-300 text-xs font-semibold tracking-widest uppercase mb-6 shadow-glow-red">
+<i class="fa-solid fa-moon text-spooky-orange"></i>
+<span class="">WELCOME TO</span>
+</div>
+<!-- Main Title -->
+<h1 class="font-horror-title text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-blood-gradient leading-tight tracking-wider uppercase drop-shadow-2xl">
+          HAUNTED<br class="hidden sm:inline"> NIGHT 2026
+        </h1>
+<!-- Subtitle -->
+<p class="mt-4 sm:mt-5 text-sm sm:text-base md:text-lg tracking-widest uppercase text-gray-300 font-medium max-w-2xl">
+          THE CITY'S ULTIMATE HALLOWEEN EXPERIENCE
+        </p>
+<!-- Metadata Badges: Date, Time & Location -->
+<div class="mt-8 flex flex-wrap justify-center items-center gap-4 text-xs sm:text-sm">
+<!-- Date & Time Badge -->
+<div class="flex items-center gap-2.5 px-5 py-2.5 rounded-full glass-card border border-purple-500/30 text-gray-200">
+<i class="fa-solid fa-calendar-days text-crimson-400"></i>
+<span class="font-semibold tracking-wide">31 OCTOBER 2026</span>
+<span class="text-purple-400">|</span>
+<span class="text-gray-400 font-normal">8:00 PM - 2:00 AM</span>
+</div>
+<!-- Location Badge -->
+<div class="flex items-center gap-2.5 px-5 py-2.5 rounded-full glass-card border border-purple-500/30 text-gray-200">
+<i class="fa-solid fa-location-dot text-spooky-orange"></i>
+<span class="font-semibold tracking-wide">THE GRAND ARENA</span>
+<span class="text-purple-400">|</span>
+<span class="text-gray-400 font-normal">LAHORE, PAKISTAN</span>
+</div>
+</div>
+<!-- Countdown Timer -->
+<div class="mt-10 grid grid-cols-4 gap-3 sm:gap-6 w-full max-w-lg" data-purpose="countdown-clock">
+<!-- Days -->
+<div class="glass-card rounded-2xl p-3 sm:p-4 text-center border border-crimson-500/30 shadow-inner-glow hover:border-crimson-500/70 transition-all">
+<span class="block text-2xl sm:text-4xl font-bold font-cinzel text-white drop-shadow">32</span>
+<span class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-crimson-400 mt-1">Days</span>
+</div>
+<!-- Hours -->
+<div class="glass-card rounded-2xl p-3 sm:p-4 text-center border border-crimson-500/30 shadow-inner-glow hover:border-crimson-500/70 transition-all">
+<span class="block text-2xl sm:text-4xl font-bold font-cinzel text-white drop-shadow">14</span>
+<span class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-crimson-400 mt-1">Hours</span>
+</div>
+<!-- Minutes -->
+<div class="glass-card rounded-2xl p-3 sm:p-4 text-center border border-crimson-500/30 shadow-inner-glow hover:border-crimson-500/70 transition-all">
+<span class="block text-2xl sm:text-4xl font-bold font-cinzel text-white drop-shadow">27</span>
+<span class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-crimson-400 mt-1">Minutes</span>
+</div>
+<!-- Seconds -->
+<div class="glass-card rounded-2xl p-3 sm:p-4 text-center border border-crimson-500/30 shadow-inner-glow hover:border-crimson-500/70 transition-all">
+<span class="block text-2xl sm:text-4xl font-bold font-cinzel text-white drop-shadow" id="countdown-sec">29</span>
+<span class="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-crimson-400 mt-1">Seconds</span>
+</div>
+</div>
+<!-- Hero CTA Button -->
+<div class="mt-10">
+<a class="blood-border-btn inline-flex items-center gap-3 px-8 sm:px-10 py-4 rounded-full text-sm sm:text-base font-bold tracking-widest uppercase text-white shadow-glow-red transition duration-300" href="#tickets">
+<i class="fa-solid fa-ticket-simple text-lg"></i>
+<span class="">GET YOUR TICKETS</span>
+</a>
+</div>
+<!-- Atmospheric Pumpkins visual bar -->
+<div class="mt-14 w-full flex items-center justify-around opacity-75 max-w-3xl">
+<i class="fa-solid fa-jack-o-lantern text-3xl sm:text-4xl text-spooky-orange/80 animate-pulse"></i>
+<span class="h-px w-24 bg-gradient-to-r from-transparent via-crimson-500/40 to-transparent"></span>
+<i class="fa-solid fa-ghost text-2xl sm:text-3xl text-purple-400/80"></i>
+<span class="h-px w-24 bg-gradient-to-r from-transparent via-crimson-500/40 to-transparent"></span>
+<i class="fa-solid fa-jack-o-lantern text-3xl sm:text-4xl text-spooky-orange/80 animate-pulse"></i>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: EventHighlights -->
+<section class="py-24 relative bg-night-950 z-20 border-t border-purple-950/40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Header -->
+<div class="text-center max-w-xl mx-auto mb-16">
+<h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white tracking-widest uppercase">
+            EVENT HIGHLIGHTS
+          </h2>
+<div class="h-0.5 w-16 bg-crimson-500 mx-auto my-3"></div>
+<p class="text-gray-400 text-sm uppercase tracking-wider">
+            More than just a party — it's an experience.
+          </p>
+</div>
+<!-- Highlights Grid (4 Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1: Haunted House -->
+<div class="glass-card glass-card-hover rounded-2xl p-8 text-center transition-all duration-300 flex flex-col items-center">
+<div class="w-16 h-16 rounded-2xl bg-purple-950/60 border border-purple-500/40 flex items-center justify-center text-purple-400 text-2xl mb-6 shadow-glow-purple">
+<i class="fa-solid fa-dungeon"></i>
+</div>
+<h3 class="font-cinzel text-lg font-bold text-white tracking-wide mb-3">HAUNTED HOUSE</h3>
+<p class="text-gray-400 text-sm leading-relaxed">
+              Face your fears in our immersive haunted maze with live performers.
+            </p>
+</div>
+<!-- Card 2: Live DJ -->
+<div class="glass-card glass-card-hover rounded-2xl p-8 text-center transition-all duration-300 flex flex-col items-center">
+<div class="w-16 h-16 rounded-2xl bg-crimson-950/60 border border-crimson-500/40 flex items-center justify-center text-crimson-400 text-2xl mb-6 shadow-glow-red">
+<i class="fa-solid fa-music"></i>
+</div>
+<h3 class="font-cinzel text-lg font-bold text-white tracking-wide mb-3">LIVE DJ</h3>
+<p class="text-gray-400 text-sm leading-relaxed">
+              Top DJs, non-stop beats, bass drops and hypnotic lighting all night long.
+            </p>
+</div>
+<!-- Card 3: Costume Contest -->
+<div class="glass-card glass-card-hover rounded-2xl p-8 text-center transition-all duration-300 flex flex-col items-center">
+<div class="w-16 h-16 rounded-2xl bg-purple-950/60 border border-purple-500/40 flex items-center justify-center text-purple-400 text-2xl mb-6 shadow-glow-purple">
+<i class="fa-solid fa-mask"></i>
+</div>
+<h3 class="font-cinzel text-lg font-bold text-white tracking-wide mb-3">COSTUME CONTEST</h3>
+<p class="text-gray-400 text-sm leading-relaxed">
+              Best creative, scary, and couple costumes win huge cash prizes.
+            </p>
+</div>
+<!-- Card 4: Food & Drinks -->
+<div class="glass-card glass-card-hover rounded-2xl p-8 text-center transition-all duration-300 flex flex-col items-center">
+<div class="w-16 h-16 rounded-2xl bg-amber-950/60 border border-spooky-orange/40 flex items-center justify-center text-spooky-orange text-2xl mb-6">
+<i class="fa-solid fa-martini-glass-citrus"></i>
+</div>
+<h3 class="font-cinzel text-lg font-bold text-white tracking-wide mb-3">FOOD &amp; DRINKS</h3>
+<p class="text-gray-400 text-sm leading-relaxed">
+              Spooky cocktails, smoking blood potions, and gourmet festival street eats.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: EventHighlights -->
+<!-- BEGIN: ExploreExperience -->
+<section class="py-24 relative bg-night-900 z-20 border-t border-purple-900/25" id="experience">
+
+</section>
+<!-- END: ExploreExperience -->
+<!-- BEGIN: TicketPricing -->
+<section class="py-24 relative bg-night-950 z-20 border-t border-purple-950/40" id="tickets">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Header -->
+<div class="text-center max-w-xl mx-auto mb-16">
+<h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white tracking-widest uppercase">
+            CHOOSE YOUR TICKET
+          </h2>
+<div class="h-0.5 w-16 bg-crimson-500 mx-auto my-3"></div>
+<p class="text-gray-400 text-sm uppercase tracking-wider">
+            Different experiences. Same unforgettable night.
+          </p>
+</div>
+<!-- 3 Tier Pricing Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
+<!-- Card 1: Regular -->
+<div class="glass-card rounded-3xl p-8 border border-purple-900/30 text-center relative hover:border-purple-600 transition-all duration-300 flex flex-col h-full justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-purple-950/60 border border-purple-500/30 flex items-center justify-center text-purple-400 mx-auto mb-4">
+<i class="fa-solid fa-ticket"></i>
+</div>
+<h3 class="font-cinzel text-xl font-bold text-white tracking-wider uppercase">REGULAR</h3>
+<div class="my-6">
+<span class="text-gray-400 text-xs uppercase font-medium">PKR</span>
+<span class="text-3xl font-bold text-white ml-1">1,500</span>
+</div>
+<ul class="text-sm text-gray-300 space-y-3 mb-8 text-left max-w-[220px] mx-auto">
+<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Event Entry</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Access to all areas</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Standard queue</li>
+</ul>
+</div>
+<a class="w-full py-3 rounded-full border border-purple-500/50 hover:bg-purple-600/20 text-white font-semibold text-xs tracking-widest uppercase transition duration-300 block text-center" href="#">
+              BUY NOW
+            </a>
+</div>
+<!-- Card 2: VIP (Featured Center) -->
+<div class="glass-card rounded-3xl p-8 border-2 border-crimson-500 text-center relative shadow-glow-red-lg transform md:-translate-y-4 bg-night-900/90 flex flex-col h-full justify-between">
+<!-- Badge -->
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-crimson-600 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full shadow-md">
+              MOST POPULAR
+            </div>
+<div>
+<div class="w-12 h-12 rounded-xl bg-crimson-950 border border-crimson-500/50 flex items-center justify-center text-crimson-400 mx-auto mb-4">
+<i class="fa-solid fa-crown"></i>
+</div>
+<h3 class="font-cinzel text-2xl font-bold text-white tracking-wider uppercase text-crimson-400">VIP</h3>
+<div class="my-6">
+<span class="text-gray-400 text-xs uppercase font-medium">PKR</span>
+<span class="text-4xl font-extrabold text-white ml-1">3,000</span>
+</div>
+<ul class="text-sm text-gray-200 space-y-3.5 mb-8 text-left max-w-[220px] mx-auto">
+<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500 text-xs"></i> Event Entry</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500 text-xs"></i> VIP Lounge Access</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500 text-xs"></i> Priority Queue</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimson-500 text-xs"></i> Exclusive Perks</li>
+</ul>
+</div>
+<a class="blood-border-btn w-full py-3.5 rounded-full text-white font-bold text-xs tracking-widest uppercase transition duration-300 block text-center shadow-glow-red" href="#">
+              BUY NOW
+            </a>
+</div>
+<!-- Card 3: Premium -->
+<div class="glass-card rounded-3xl p-8 border border-purple-900/30 text-center relative hover:border-purple-600 transition-all duration-300 flex flex-col h-full justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-purple-950/60 border border-purple-500/30 flex items-center justify-center text-purple-400 mx-auto mb-4">
+<i class="fa-solid fa-star"></i>
+</div>
+<h3 class="font-cinzel text-xl font-bold text-white tracking-wider uppercase">PREMIUM</h3>
+<div class="my-6">
+<span class="text-gray-400 text-xs uppercase font-medium">PKR</span>
+<span class="text-3xl font-bold text-white ml-1">5,000</span>
+</div>
+<ul class="text-sm text-gray-300 space-y-3 mb-8 text-left max-w-[220px] mx-auto">
+<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Event Entry</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> VIP Lounge Access</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Priority Queue</li>
+<li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-400 text-xs"></i> Free Drink Voucher</li>
+</ul>
+</div>
+<a class="w-full py-3 rounded-full border border-purple-500/50 hover:bg-purple-600/20 text-white font-semibold text-xs tracking-widest uppercase transition duration-300 block text-center" href="#">
+              BUY NOW
+            </a>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TicketPricing -->
+<!-- BEGIN: EventGallery -->
+<section class="py-24 relative bg-night-900 z-20 border-t border-purple-900/25" id="gallery">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Header -->
+<div class="text-center max-w-xl mx-auto mb-16">
+<h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white tracking-widest uppercase">
+            EVENT GALLERY
+          </h2>
+<div class="h-0.5 w-16 bg-crimson-500 mx-auto my-3"></div>
+<p class="text-gray-400 text-sm uppercase tracking-wider">
+            Relive the moments. Feel the energy.
+          </p>
+</div>
+<!-- Gallery Grid (8 Items) -->
+<div class="w-full max-w-5xl mx-auto space-y-8" data-purpose="cinematic-video-slider"><div class="relative rounded-3xl overflow-hidden border border-crimson-500/50 shadow-glow-red-lg glass-card group"><div class="relative aspect-video w-full overflow-hidden bg-night-950 flex items-center justify-center"><img alt="Official Aftermovie 2025" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 filter brightness-90 contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRIsiJi9gpXy4IyfrkjUMTKQNVWUjC9M1KGMsTvcqafsh74EQ2L90qJ6dKgv9oLk6ArtgxhDAO7IBqK-Lu-CuHOSaEJNqtv1faqKZcmJT2xEpVxOD1ZqH6aKIudNTC__RJXnL8IeM0462l5W67wckhn61D2PAd95_bHYvjozPWFEXf9GDHM-_m6J9rRTW47YgOktzZeTfRfDxIOs9RYF51qsGmjY2WUqdGKPNxNqXsjhSvLrUn_a89"><div class="absolute inset-0 bg-gradient-to-t from-night-950 via-[#0a0612]/50 to-transparent pointer-events-none"></div><div class="absolute top-4 sm:top-6 left-4 sm:left-6 flex items-center gap-2.5 z-20"><span class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-crimson-600/90 text-white text-[11px] font-bold tracking-widest uppercase shadow-glow-red"><span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> FEATURED REEL</span><span class="px-3 py-1 rounded-full glass-card border border-purple-500/30 text-xs font-semibold text-gray-200"><i class="fa-solid fa-moon text-spooky-orange mr-1"></i> 4K ULTRA HD</span></div><div class="absolute top-4 sm:top-6 right-4 sm:right-6 flex items-center gap-3 z-20"><button aria-label="Mute audio" class="w-10 h-10 rounded-full glass-card border border-purple-500/40 text-gray-300 hover:text-white hover:border-crimson-500 flex items-center justify-center transition"><i class="fa-solid fa-volume-high text-xs"></i></button><button aria-label="Fullscreen mode" class="w-10 h-10 rounded-full glass-card border border-purple-500/40 text-gray-300 hover:text-white hover:border-crimson-500 flex items-center justify-center transition"><i class="fa-solid fa-expand text-xs"></i></button></div><button aria-label="Play Video" class="relative z-20 w-20 h-20 sm:w-24 sm:h-24 rounded-full blood-border-btn flex items-center justify-center text-white text-2xl sm:text-3xl pl-1 shadow-glow-red-lg hover:scale-110 active:scale-95 transition-all duration-300"><i class="fa-solid fa-play"></i></button><div class="absolute bottom-4 sm:bottom-6 left-4 sm:left-8 right-4 sm:right-8 z-20 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4"><div class="space-y-1.5 max-w-xl"><span class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-crimson-400"><i class="fa-solid fa-calendar-days mr-1.5"></i> EDITION 2025 RECAP</span><h3 class="font-cinzel text-xl sm:text-3xl font-extrabold text-white tracking-wide drop-shadow-md">Official Aftermovie: Into The Shadows</h3><p class="text-xs sm:text-sm text-gray-300 leading-relaxed hidden sm:block">Experience the heart-racing beats, sinister labyrinth screams, and pyrotechnic ecstasy from last year's sold-out nightfall celebration.</p></div><div class="flex items-center gap-2 self-end sm:self-auto shrink-0"><span class="px-3.5 py-1.5 rounded-full bg-night-950/80 border border-purple-500/40 text-xs font-semibold text-spooky-orange"><i class="fa-solid fa-clock mr-1 text-[10px]"></i> 04:28</span></div></div><button aria-label="Previous video" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full glass-card border border-purple-500/40 text-white flex items-center justify-center hover:border-crimson-500 hover:scale-110 hover:shadow-glow-red transition duration-300 hidden sm:flex"><i class="fa-solid fa-chevron-left text-sm"></i></button><button aria-label="Next video" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full glass-card border border-purple-500/40 text-white flex items-center justify-center hover:border-crimson-500 hover:scale-110 hover:shadow-glow-red transition duration-300 hidden sm:flex"><i class="fa-solid fa-chevron-right text-sm"></i></button></div></div><div class="flex flex-col sm:flex-row items-center justify-between gap-4 px-2"><div class="flex items-center gap-2"><span class="w-8 h-2 rounded-full bg-crimson-500 transition-all"></span><span class="w-2 h-2 rounded-full bg-purple-900/60 hover:bg-crimson-500/60 cursor-pointer transition-all"></span><span class="w-2 h-2 rounded-full bg-purple-900/60 hover:bg-crimson-500/60 cursor-pointer transition-all"></span><span class="w-2 h-2 rounded-full bg-purple-900/60 hover:bg-crimson-500/60 cursor-pointer transition-all"></span></div><div class="flex items-center gap-3 text-xs tracking-wider uppercase text-gray-400 font-medium"><span class="text-white font-bold">Reel 01</span> of 04<div class="flex items-center gap-2 ml-3"><button aria-label="Slide backwards" class="w-8 h-8 rounded-full border border-purple-900/40 hover:border-crimson-500 glass-card text-gray-300 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-chevron-left text-xs"></i></button><button aria-label="Slide forwards" class="w-8 h-8 rounded-full border border-purple-900/40 hover:border-crimson-500 glass-card text-gray-300 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-chevron-right text-xs"></i></button></div></div></div><div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2"><div class="glass-card rounded-2xl p-2.5 border-2 border-crimson-500 bg-crimson-950/20 shadow-glow-red cursor-pointer transition duration-300"><div class="relative aspect-video rounded-xl overflow-hidden mb-2.5"><img alt="Main Stage Rave" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD80A1jQz2VND8jsSCwxCIYMKRcKI4Q9eZ0BkH7TbVu7MGwZvGvRarApBug78PwjW1xOVG29eKDsbGli8dt6iJ1HAjtsGE_gXv3jWiNmSunovbBRswGK4DKyLYXU6asoAEXn5vxAcet2zZtBBE87Efl007ueT2-YsxQqV_YJRo1CU7YkitysoO0HtXJ64T4sI_SPaVkrikAbBS_oA2zbI3k3UX67gdFczNblJCJkJ1Q_KFhsNcT0Qx1"><div class="absolute inset-0 bg-night-950/40 flex items-center justify-center"><div class="w-8 h-8 rounded-full bg-crimson-600/90 text-white flex items-center justify-center text-xs shadow-glow-red"><i class="fa-solid fa-play ml-0.5"></i></div></div><span class="absolute bottom-1.5 right-1.5 px-1.5 py-0.5 bg-night-950/90 rounded text-[10px] font-semibold text-white">03:15</span><span class="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-full bg-crimson-600 text-white text-[9px] font-bold uppercase tracking-wider">NOW PLAYING</span></div><h4 class="font-cinzel text-xs font-bold text-white truncate">Main Stage Rave Sets</h4><p class="text-[11px] text-gray-400">Laser storms &amp; live drops</p></div><div class="glass-card glass-card-hover rounded-2xl p-2.5 border border-purple-900/30 cursor-pointer transition duration-300"><div class="relative aspect-video rounded-xl overflow-hidden mb-2.5"><img alt="Haunted Maze" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7eDq2z5f6wmCkbrUcPjXPbGXe5pk6RydnTdWBl9MHQv99o_YHQJGd0V734HhzhFVSABJ4pfZgHDuj8nEwl8HU8zqi4_Y9sVcm7Qu0oMF1FVTO4wIrWMsqEl80LczoM9lnQcmEhblZVnjUDlGbWuaXrGKrZPpt6JM7hZDCaceuZEkrdEffcxW9Ej-hB_JE4LVr7pPkoz1VPS6Wmj3X-hWoqhlxPaA9LkF_B06NVmQBRFJinWNSW9vw"><div class="absolute inset-0 bg-night-950/40 flex items-center justify-center opacity-80 group-hover:opacity-100"><div class="w-8 h-8 rounded-full bg-night-900/90 text-gray-200 border border-purple-500/40 flex items-center justify-center text-xs"><i class="fa-solid fa-play ml-0.5"></i></div></div><span class="absolute bottom-1.5 right-1.5 px-1.5 py-0.5 bg-night-950/90 rounded text-[10px] font-semibold text-white">02:40</span></div><h4 class="font-cinzel text-xs font-bold text-white truncate">Haunted Maze Night-Cam</h4><p class="text-[11px] text-gray-400">Screams &amp; live jump scares</p></div><div class="glass-card glass-card-hover rounded-2xl p-2.5 border border-purple-900/30 cursor-pointer transition duration-300"><div class="relative aspect-video rounded-xl overflow-hidden mb-2.5"><img alt="Costume Championship" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcLVtQl41I09i6fSj3Ln5WMjCXmGmGaTUkIEe_izbJCcCVrp8_ES1aHjfiFVV03TGtxWC-y7A5q39fofeFSY0L0IsEA6ZgGlHdPG22aJorGpJmQK2AiDWwcIGEhq9ki7f82S5Plz4moZm7k80FWFtM0Tfh5yXE6jdDrOlZmyCstrlAT0hPF3cTYKxwjLuSjH7cPWyrmMcX9_j_p277fW0w6LfngcqXD2sE7ZZUgn0oKuTwJqMtlDas"><div class="absolute inset-0 bg-night-950/40 flex items-center justify-center opacity-80 group-hover:opacity-100"><div class="w-8 h-8 rounded-full bg-night-900/90 text-gray-200 border border-purple-500/40 flex items-center justify-center text-xs"><i class="fa-solid fa-play ml-0.5"></i></div></div><span class="absolute bottom-1.5 right-1.5 px-1.5 py-0.5 bg-night-950/90 rounded text-[10px] font-semibold text-white">01:55</span></div><h4 class="font-cinzel text-xs font-bold text-white truncate">Costume Championship</h4><p class="text-[11px] text-gray-400">Top awards &amp; cosplay walk</p></div><div class="glass-card glass-card-hover rounded-2xl p-2.5 border border-purple-900/30 cursor-pointer transition duration-300"><div class="relative aspect-video rounded-xl overflow-hidden mb-2.5"><img alt="Blood Punch Bar &amp; Lounges" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbed9k-9MC9GZ_vryjLZMJld5J0j_a7Fu3vTFl6f7IjQoq4dkp_4l_qfwNRVCd_7b3LNGi8R3K1GMlviOoNjE_ImAMnm6sO5nWMHaHch4xR0TeAVbzptwM-nYJS4xHwJeODHg1vsR8cSraQ-uKZGkMy8XusPlFDyvboiFryYVsnhxYFOQZ0FlDwfpqaQgiy1pwGV_fHOIWY_H5rvalrYFHacdCWenqDTqO8UFkKuNEAafdIvoYSoys"><div class="absolute inset-0 bg-night-950/40 flex items-center justify-center opacity-80 group-hover:opacity-100"><div class="w-8 h-8 rounded-full bg-night-900/90 text-gray-200 border border-purple-500/40 flex items-center justify-center text-xs"><i class="fa-solid fa-play ml-0.5"></i></div></div><span class="absolute bottom-1.5 right-1.5 px-1.5 py-0.5 bg-night-950/90 rounded text-[10px] font-semibold text-white">02:18</span></div><h4 class="font-cinzel text-xs font-bold text-white truncate">Blood Bar &amp; Lounges</h4><p class="text-[11px] text-gray-400">VIP potions &amp; mixes</p></div></div></div>
+</div>
+</section>
+<!-- END: EventGallery -->
+<!-- BEGIN: Testimonials -->
+<section class="py-24 relative bg-night-950 z-20 border-t border-purple-950/40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Header -->
+<div class="text-center max-w-xl mx-auto mb-16">
+<h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white tracking-widest uppercase">
+            WHAT OUR GUESTS SAY
+          </h2>
+<div class="h-0.5 w-16 bg-crimson-500 mx-auto my-3"></div>
+<p class="text-gray-400 text-sm uppercase tracking-wider">
+            Real people. Real experiences.
+          </p>
+</div>
+<!-- Testimonial Cards (3 items) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Testimonial 1 -->
+<div class="glass-card rounded-2xl p-6 border border-purple-900/30 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-spooky-orange text-xs mb-4">
+<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+</div>
+<p class="text-gray-300 text-sm italic mb-6 leading-relaxed">
+                "Best Halloween event I've ever been to! The atmosphere was insane and the team did an amazing job!"
+              </p>
+</div>
+<div class="flex items-center gap-3 border-t border-purple-900/20 pt-4">
+<div class="w-10 h-10 rounded-full bg-crimson-600/30 border border-crimson-400/50 flex items-center justify-center font-bold text-white text-sm">
+                AS
+              </div>
+<div>
+<h4 class="text-sm font-semibold text-white">Areeba S.</h4>
+<p class="text-xs text-gray-500">Verified Attendee</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="glass-card rounded-2xl p-6 border border-purple-900/30 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-spooky-orange text-xs mb-4">
+<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+</div>
+<p class="text-gray-300 text-sm italic mb-6 leading-relaxed">
+                "The haunted house was next level. Loved the whole experience. Definitely coming back next year!"
+              </p>
+</div>
+<div class="flex items-center gap-3 border-t border-purple-900/20 pt-4">
+<div class="w-10 h-10 rounded-full bg-purple-600/30 border border-purple-400/50 flex items-center justify-center font-bold text-white text-sm">
+                HK
+              </div>
+<div>
+<h4 class="text-sm font-semibold text-white">Hamza K.</h4>
+<p class="text-xs text-gray-500">Verified Attendee</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="glass-card rounded-2xl p-6 border border-purple-900/30 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-1 text-spooky-orange text-xs mb-4">
+<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+</div>
+<p class="text-gray-300 text-sm italic mb-6 leading-relaxed">
+                "Great music, amazing crowd and super well organized. Totally worth it!"
+              </p>
+</div>
+<div class="flex items-center gap-3 border-t border-purple-900/20 pt-4">
+<div class="w-10 h-10 rounded-full bg-spooky-orange/30 border border-spooky-orange/50 flex items-center justify-center font-bold text-white text-sm">
+                ST
+              </div>
+<div>
+<h4 class="text-sm font-semibold text-white">Sana T.</h4>
+<p class="text-xs text-gray-500">Verified Attendee</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Carousel navigation indicator dots -->
+<div class="flex justify-center items-center gap-2 mt-8">
+<span class="w-2.5 h-2.5 rounded-full bg-crimson-500 inline-block"></span>
+<span class="w-2 h-2 rounded-full bg-gray-600 inline-block"></span>
+<span class="w-2 h-2 rounded-full bg-gray-600 inline-block"></span>
+</div>
+</div>
+</section>
+<!-- END: Testimonials -->
+<!-- BEGIN: EventLocation -->
+<section class="py-24 relative bg-night-900 z-20 border-t border-purple-900/25">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Header -->
+<div class="text-center max-w-xl mx-auto mb-16">
+<h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white tracking-widest uppercase">
+            EVENT LOCATION
+          </h2>
+<div class="h-0.5 w-16 bg-crimson-500 mx-auto my-3"></div>
+<p class="text-gray-400 text-sm uppercase tracking-wider">
+            Find us at the heart of the scary.
+          </p>
+</div>
+<!-- Split Map + Details -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center glass-card rounded-3xl p-6 sm:p-10 border border-purple-900/30">
+<!-- Left Info Box -->
+<div class="lg:col-span-5 space-y-6">
+<div>
+<div class="inline-flex items-center gap-2 text-crimson-400 font-semibold text-xs tracking-wider uppercase mb-1">
+<i class="fa-solid fa-location-dot"></i> Venue Partner
+              </div>
+<h3 class="text-2xl sm:text-3xl font-cinzel font-bold text-white">THE GRAND ARENA</h3>
+<p class="text-gray-400 text-sm">Lahore, Pakistan</p>
+</div>
+<!-- Details List -->
+<div class="border-y border-purple-900/30 py-4 space-y-3 text-sm">
+<div class="flex justify-between items-center">
+<span class="text-gray-400">Gates Open:</span>
+<span class="font-semibold text-white">8:00 PM</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-gray-400">Event Time:</span>
+<span class="font-semibold text-white">8:00 PM - 2:00 AM</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-gray-400">Parking:</span>
+<span class="font-semibold text-emerald-400">Available On-site</span>
+</div>
+</div>
+<div>
+<a class="blood-border-btn inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest text-white shadow-glow-red" href="#">
+<i class="fa-solid fa-diamond-turn-right"></i>
+<span class="">GET DIRECTIONS</span>
+</a>
+</div>
+</div>
+<!-- Right: Stylized Dark Mode Map Placeholder Graphic -->
+<div class="lg:col-span-7 h-72 sm:h-80 rounded-2xl overflow-hidden relative border border-purple-800/40 bg-night-950 flex items-center justify-center">
+<!-- Simulated Map Grid -->
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(#9d4edd_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<!-- Map Pin Card Overlay -->
+<div class="relative z-10 glass-card p-4 rounded-xl border border-crimson-500/60 shadow-glow-red flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-crimson-600 flex items-center justify-center text-white text-base animate-bounce">
+<i class="fa-solid fa-location-dot"></i>
+</div>
+<div>
+<h4 class="font-cinzel text-xs font-bold text-white tracking-wide">The Grand Arena</h4>
+<p class="text-[11px] text-gray-400">Lahore, Pakistan</p>
+</div>
+</div>
+<!-- Accent roads / aesthetic vector lines -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30">
+<div class="w-3/4 h-px bg-purple-500/40 rotate-12"></div>
+<div class="h-3/4 w-px bg-crimson-500/30 -rotate-45"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: EventLocation -->
+<!-- BEGIN: FAQ -->
+<section class="py-24 relative bg-night-950 z-20 border-t border-purple-950/40" id="faq">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Header -->
+<div class="text-center max-w-xl mx-auto mb-16">
+<h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white tracking-widest uppercase">
+            FREQUENTLY ASKED QUESTIONS
+          </h2>
+<div class="h-0.5 w-16 bg-crimson-500 mx-auto my-3"></div>
+<p class="text-gray-400 text-sm uppercase tracking-wider">
+            Got questions? We've got answers.
+          </p>
+</div>
+<!-- 2-Column Accordion Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4" data-purpose="faq-accordion-container">
+<!-- FAQ Item 1 -->
+<div class="glass-card rounded-xl p-5 border border-purple-900/30">
+<details class="group">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none text-white text-sm">
+<span class="">What is the age limit for the event?</span>
+<span class="transition group-open:rotate-45 text-crimson-400">
+<i class="fa-solid fa-plus text-xs"></i>
+</span>
+</summary>
+<p class="text-gray-400 text-xs mt-3 leading-relaxed">
+                The event is strictly 18+. Valid CNIC or government-issued photo ID is required at the entry gates for verification.
+              </p>
+</details>
+</div>
+<!-- FAQ Item 2 -->
+<div class="glass-card rounded-xl p-5 border border-purple-900/30">
+<details class="group">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none text-white text-sm">
+<span class="">Are costumes mandatory?</span>
+<span class="transition group-open:rotate-45 text-crimson-400">
+<i class="fa-solid fa-plus text-xs"></i>
+</span>
+</summary>
+<p class="text-gray-400 text-xs mt-3 leading-relaxed">
+                Costumes are not strictly mandatory but are strongly encouraged! Wearing one automatically enters you into the costume prize contest.
+              </p>
+</details>
+</div>
+<!-- FAQ Item 3 -->
+<div class="glass-card rounded-xl p-5 border border-purple-900/30">
+<details class="group">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none text-white text-sm">
+<span class="">Is the event rain or shine?</span>
+<span class="transition group-open:rotate-45 text-crimson-400">
+<i class="fa-solid fa-plus text-xs"></i>
+</span>
+</summary>
+<p class="text-gray-400 text-xs mt-3 leading-relaxed">
+                Yes! The Grand Arena features both fully covered mega-hangars and sheltered arenas, ensuring bad weather won't spoil the night.
+              </p>
+</details>
+</div>
+<!-- FAQ Item 4 -->
+<div class="glass-card rounded-xl p-5 border border-purple-900/30">
+<details class="group">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none text-white text-sm">
+<span class="">Will there be parking available?</span>
+<span class="transition group-open:rotate-45 text-crimson-400">
+<i class="fa-solid fa-plus text-xs"></i>
+</span>
+</summary>
+<p class="text-gray-400 text-xs mt-3 leading-relaxed">
+                Yes, ample secure on-site parking is available for all attendees. Valet parking is included complimentary with VIP and Premium passes.
+              </p>
+</details>
+</div>
+<!-- FAQ Item 5 -->
+<div class="glass-card rounded-xl p-5 border border-purple-900/30">
+<details class="group">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none text-white text-sm">
+<span class="">Can I get a refund if I can't attend?</span>
+<span class="transition group-open:rotate-45 text-crimson-400">
+<i class="fa-solid fa-plus text-xs"></i>
+</span>
+</summary>
+<p class="text-gray-400 text-xs mt-3 leading-relaxed">
+                Tickets are non-refundable. However, tickets are fully transferable to another person up to 48 hours prior to the event date.
+              </p>
+</details>
+</div>
+<!-- FAQ Item 6 -->
+<div class="glass-card rounded-xl p-5 border border-purple-900/30">
+<details class="group">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none text-white text-sm">
+<span class="">How do I receive my ticket?</span>
+<span class="transition group-open:rotate-45 text-crimson-400">
+<i class="fa-solid fa-plus text-xs"></i>
+</span>
+</summary>
+<p class="text-gray-400 text-xs mt-3 leading-relaxed">
+                Your digital e-ticket containing a unique secure QR code will be dispatched to your registered email immediately after booking confirmation.
+              </p>
+</details>
+</div>
+</div>
+</div>
+</section>
+<!-- END: FAQ -->
+<!-- BEGIN: NewsletterSection -->
+<section class="py-20 relative bg-night-900 z-20 overflow-hidden border-t border-purple-900/30">
+<div class="max-w-4xl mx-auto px-4 sm:px-6">
+<!-- Decorated Banner Card with Pumpkin Glow Motif -->
+<div class="relative rounded-3xl p-8 sm:p-12 text-center overflow-hidden border border-crimson-500/40 bg-radial-vignette shadow-glow-red">
+<!-- Background Atmospheric Details -->
+<div class="absolute -right-8 -bottom-8 opacity-25 text-8xl text-spooky-orange pointer-events-none">
+<i class="fa-solid fa-jack-o-lantern"></i>
+</div>
+<div class="absolute -left-8 -bottom-8 opacity-25 text-8xl text-spooky-orange pointer-events-none">
+<i class="fa-solid fa-jack-o-lantern"></i>
+</div>
+<!-- Content -->
+<div class="relative z-10 max-w-xl mx-auto">
+<h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white tracking-widest uppercase">
+              STAY IN THE LOOP
+            </h2>
+<p class="text-gray-300 text-xs sm:text-sm mt-3 mb-8">
+              Get the latest artist line-up announcements, special flash deals, and insider event news.
+            </p>
+<form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="event.preventDefault()">
+<input class="flex-1 px-5 py-3 rounded-full bg-night-950/90 border border-purple-500/40 text-white placeholder-gray-500 text-xs focus:outline-none focus:border-crimson-500 focus:ring-1 focus:ring-crimson-500" placeholder="Enter your email address" required="" type="email">
+<button class="blood-border-btn px-7 py-3 rounded-full text-xs font-bold uppercase tracking-widest text-white shrink-0" type="submit">
+                SUBSCRIBE
+              </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- END: NewsletterSection -->
+</main>
+<!-- BEGIN: Footer -->
+<footer class="bg-night-950 border-t border-purple-900/30 pt-16 pb-12 z-20 relative text-gray-400">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Top Columns Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
+<!-- Column 1: Brand & Tagline (Span 2) -->
+<div class="lg:col-span-2 space-y-4">
+<a class="flex items-center space-x-3" href="#">
+<div class="w-8 h-8 rounded-full bg-crimson-600/30 border border-crimson-500/50 flex items-center justify-center text-crimson-400">
+<i class="fa-solid fa-bat text-sm"></i>
+</div>
+<span class="font-cinzel text-xl font-bold tracking-widest text-white">
+              NIGHT<span class="text-crimson-500">FALL</span>
+</span>
+</a>
+<p class="text-xs text-gray-400 max-w-sm italic">
+            More than an event, It's a night to remember. Turn your nightmares into memories.
+          </p>
+<!-- Social Media Icons -->
+<div class="flex items-center space-x-4 pt-2 text-gray-400">
+<a aria-label="Facebook" class="w-8 h-8 rounded-full bg-purple-950/50 border border-purple-900/50 flex items-center justify-center hover:text-crimson-400 hover:border-crimson-400 transition" href="#">
+<i class="fa-brands fa-facebook-f text-xs"></i>
+</a>
+<a aria-label="Instagram" class="w-8 h-8 rounded-full bg-purple-950/50 border border-purple-900/50 flex items-center justify-center hover:text-crimson-400 hover:border-crimson-400 transition" href="#">
+<i class="fa-brands fa-instagram text-xs"></i>
+</a>
+<a aria-label="Twitter" class="w-8 h-8 rounded-full bg-purple-950/50 border border-purple-900/50 flex items-center justify-center hover:text-crimson-400 hover:border-crimson-400 transition" href="#">
+<i class="fa-brands fa-x-twitter text-xs"></i>
+</a>
+<a aria-label="YouTube" class="w-8 h-8 rounded-full bg-purple-950/50 border border-purple-900/50 flex items-center justify-center hover:text-crimson-400 hover:border-crimson-400 transition" href="#">
+<i class="fa-brands fa-youtube text-xs"></i>
+</a>
+<a aria-label="TikTok" class="w-8 h-8 rounded-full bg-purple-950/50 border border-purple-900/50 flex items-center justify-center hover:text-crimson-400 hover:border-crimson-400 transition" href="#">
+<i class="fa-brands fa-tiktok text-xs"></i>
+</a>
+</div>
+</div>
+<!-- Column 2: Quick Links -->
+<div>
+<h4 class="font-cinzel text-xs font-bold text-white tracking-widest uppercase mb-4">Quick Links</h4>
+<ul class="space-y-2 text-xs">
+<li class=""><a class="hover:text-crimson-400 transition" href="#event">Event</a></li>
+<li class=""><a class="hover:text-crimson-400 transition" href="#experience">Experience</a></li>
+<li class=""><a class="hover:text-crimson-400 transition" href="#tickets">Tickets</a></li>
+<li class=""><a class="hover:text-crimson-400 transition" href="#gallery">Gallery</a></li>
+<li class=""><a class="hover:text-crimson-400 transition" href="#faq">FAQ</a></li>
+</ul>
+</div>
+<!-- Column 3: Support -->
+<div>
+<h4 class="font-cinzel text-xs font-bold text-white tracking-widest uppercase mb-4">Support</h4>
+<ul class="space-y-2 text-xs">
+<li class=""><a class="hover:text-crimson-400 transition" href="#">Contact Us</a></li>
+<li class=""><a class="hover:text-crimson-400 transition" href="#">Terms &amp; Conditions</a></li>
+<li class=""><a class="hover:text-crimson-400 transition" href="#">Privacy Policy</a></li>
+<li class=""><a class="hover:text-crimson-400 transition" href="#">Refund Policy</a></li>
+</ul>
+</div>
+<!-- Column 4: Quick Subscribe -->
+<div>
+<h4 class="font-cinzel text-xs font-bold text-white tracking-widest uppercase mb-4">Subscribe</h4>
+<p class="text-[11px] text-gray-400 mb-3">Get updates &amp; exclusive offers directly.</p>
+<div class="flex">
+<input class="w-full text-xs px-3 py-2 bg-night-900 border border-purple-900/40 rounded-l-md text-white placeholder-gray-500 focus:outline-none" placeholder="Enter your email" type="email">
+<button class="blood-border-btn px-3 py-2 rounded-r-md text-white text-xs font-bold">
+<i class="fa-solid fa-paper-plane"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Copyright Sub-bar -->
+<div class="pt-8 border-t border-purple-950/40 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+<p class="">© 2026 Nightfall. All rights reserved.</p>
+<div class="flex items-center space-x-2 text-crimson-400">
+<i class="fa-solid fa-bat text-xs"></i>
+<span class="text-gray-400 font-cinzel text-[11px] tracking-wider">TURN YOUR NIGHTMARES INTO MEMORIES</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+<!-- Interactive JavaScript: Mobile Navigation & Dynamic Countdown Simulator -->
+<script data-purpose="mobile-menu-interactivity">
+    const menuBtn = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+  </script>
+<script data-purpose="countdown-ticker">
+    // Live ticking countdown seconds simulator
+    const secElement = document.getElementById('countdown-sec');
+    if (secElement) {
+      let currentSec = 16;
+      setInterval(() => {
+        currentSec--;
+        if (currentSec < 0) currentSec = 59;
+        secElement.textContent = currentSec < 10 ? '0' + currentSec : currentSec;
+      }, 1000);
+    }
+  </script>
+
+
+
+
+</body></html>
