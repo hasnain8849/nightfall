@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { CalendarDays, ChevronDown, Clock, MapPin, MoonStar, Ticket } from 'lucide-react'
+import { CalendarDays, ChevronDown, MapPin, MoonStar, Ticket } from 'lucide-react'
+import { DEFAULT_HERO, type HeroMedia } from '@/lib/event-data'
 
 const TARGET = new Date('2026-10-31T20:00:00+05:00').getTime()
 
@@ -32,8 +33,10 @@ function useCountdown() {
 
 const pad = (n: number) => String(n).padStart(2, '0')
 
-export function Hero() {
+export function Hero({ media }: { media?: HeroMedia }) {
   const countdown = useCountdown()
+  const bg: HeroMedia = media ?? DEFAULT_HERO
+  const isVideo = bg.mediaType === 'video'
 
   const units = useMemo(
     () => [
@@ -50,31 +53,38 @@ export function Hero() {
       id="event"
       className="bg-radial-vignette relative flex min-h-screen items-center justify-center overflow-hidden pb-24 pt-32"
     >
-      {/* Video atmosphere layer */}
+      {/* Admin-managed background media layer */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/assets/img_00.jpg"
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
-          aria-hidden
-        >
-          <source
-            src="https://assets.mixkit.co/videos/preview/mixkit-smoke-and-lights-in-a-dark-background-42996-large.mp4"
-            type="video/mp4"
+        {isVideo ? (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            poster={bg.posterUrl ?? undefined}
+            className="absolute inset-0 h-full w-full object-cover opacity-45"
+            aria-hidden
+          >
+            <source src={bg.mediaUrl} type="video/mp4" />
+          </video>
+        ) : (
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-55"
+            style={{ backgroundImage: `url('${bg.mediaUrl}')` }}
+            aria-hidden
           />
-        </video>
+        )}
+        {/* Gothic silhouette blended over the video for extra depth */}
+        {isVideo && bg.posterUrl && (
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-screen"
+            style={{ backgroundImage: `url('${bg.posterUrl}')` }}
+            aria-hidden
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0612]/80 via-[#0a0612]/55 to-night-950" />
       </div>
-
-      {/* Castle silhouette */}
-      <div
-        className="pointer-events-none absolute inset-0 z-0 bg-cover bg-center opacity-40 mix-blend-screen"
-        style={{ backgroundImage: "url('/assets/img_00.jpg')" }}
-        aria-hidden
-      />
 
       {/* Ambient orbs */}
       <div

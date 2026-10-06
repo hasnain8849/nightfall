@@ -18,9 +18,9 @@ export const EVENT = {
 
 export const NAV_LINKS = [
   { label: 'Event', href: '#event' },
-  { label: 'Experience', href: '#experience' },
   { label: 'Tickets', href: '#tickets' },
   { label: 'Gallery', href: '#gallery' },
+  { label: 'Location', href: '#location' },
   { label: 'FAQ', href: '#faq' },
 ] as const
 
@@ -53,32 +53,6 @@ export const HIGHLIGHTS = [
   },
 ] as const
 
-/* --------------------------- Experience --------------------------- */
-
-export const EXPERIENCES = [
-  {
-    image: '/assets/img_06.jpg',
-    title: 'The Haunted Mansion',
-    hook: 'Can you survive the darkness?',
-    text: 'A pitch-black labyrinth of cursed corridors, secret passages and things that follow you. Guided only by candlelight — if you dare to light one.',
-    tag: 'Attraction 01',
-  },
-  {
-    image: '/assets/img_07.jpg',
-    title: 'The Rave Zone',
-    hook: 'Music. Lights. Madness.',
-    text: 'The main stage drops beats till 2 AM with laser storms, CO₂ cannons and a sea of glowing pumpkins. This is where the night loses control.',
-    tag: 'Attraction 02',
-  },
-  {
-    image: '/assets/img_08.jpg',
-    title: 'The Cursed Forest',
-    hook: 'Not everything is harmless.',
-    text: 'A fog-drenched woodland trail where whispers call your name. Follow the lanterns, but never leave the path — the forest keeps what it catches.',
-    tag: 'Attraction 03',
-  },
-] as const
-
 /* ----------------------------- Tickets ---------------------------- */
 
 export const TICKETS = [
@@ -107,22 +81,47 @@ export const TICKETS = [
 
 /* ----------------------------- Gallery ---------------------------- */
 
-export type Reel = {
-  id: string
-  title: string
-  subtitle: string
-  image: string
-  duration: string
-  badge?: string
+export type HeroMedia = {
+  mediaType: 'video' | 'image'
+  mediaUrl: string
+  posterUrl: string | null
 }
 
-export const FEATURED_REELS: Reel[] = [
+export type VideoSlide = {
+  id: string
+  title: string
+  subtitle: string | null
+  videoUrl: string
+  posterUrl: string | null
+  duration: string | null
+  badge: string | null
+}
+
+export type LocationItem = {
+  id: string
+  name: string
+  address: string | null
+  city: string
+  gatesOpen: string | null
+  eventTime: string | null
+  parking: string | null
+  directionsUrl: string | null
+}
+
+export const DEFAULT_HERO: HeroMedia = {
+  mediaType: 'video',
+  mediaUrl: '/assets/videos/hero-moon.mp4',
+  posterUrl: '/assets/img_00.jpg',
+}
+
+export const DEFAULT_VIDEOS: VideoSlide[] = [
   {
     id: 'aftermovie',
     title: 'Official Aftermovie: Into The Shadows',
     subtitle:
-      "Experience the heart-racing beats, sinister labyrinth screams, and pyrotechnic ecstasy from last year's sold-out nightfall celebration.",
-    image: '/assets/img_01.jpg',
+      "Heart-racing lasers, sinister maze screams and pyrotechnic ecstasy from last year's sold-out Nightfall.",
+    videoUrl: '/assets/videos/g-laser-green.mp4',
+    posterUrl: '/assets/videos/posters/g-laser-green.jpg',
     duration: '04:28',
     badge: '4K ULTRA HD',
   },
@@ -130,42 +129,35 @@ export const FEATURED_REELS: Reel[] = [
     id: 'rave',
     title: 'Main Stage Rave Sets',
     subtitle: 'Laser storms, live drops and 10,000 hands in the air — the full rave chaos, uncut.',
-    image: '/assets/img_10.jpg',
+    videoUrl: '/assets/videos/g-laser-blue.mp4',
+    posterUrl: '/assets/videos/posters/g-laser-blue.jpg',
     duration: '03:15',
+    badge: 'MAIN STAGE',
   },
   {
-    id: 'maze',
-    title: 'Haunted Maze Night-Cam',
-    subtitle: 'Screams & live jump scares recorded on the infrared night-cams inside the maze.',
-    image: '/assets/img_03.jpg',
+    id: 'forest-rave',
+    title: 'Cursed Forest Rave',
+    subtitle: 'Deep in the woods the beat never stops. Lanterns, fog and a crowd that lost track of midnight.',
+    videoUrl: '/assets/videos/g-forest-rave.mp4',
+    posterUrl: '/assets/videos/posters/g-forest-rave.jpg',
     duration: '02:40',
-  },
-  {
-    id: 'costume',
-    title: 'Costume Championship',
-    subtitle: 'Top awards & cosplay walk — the most diabolical outfits of the night battle for glory.',
-    image: '/assets/img_13.jpg',
-    duration: '01:55',
-  },
-  {
-    id: 'bloodbar',
-    title: 'Blood Bar & Lounges',
-    subtitle: 'VIP potions & mixes — smoking cocktails poured by our resident alchemists.',
-    image: '/assets/img_05.jpg',
-    duration: '02:18',
+    badge: 'FOREST ZONE',
   },
 ]
 
-export const GALLERY_IMAGES = [
-  { src: '/assets/img_09.jpg', alt: 'Costumed crowd celebrating at Nightfall' },
-  { src: '/assets/img_14.jpg', alt: 'DJ set with laser lights at Euphoria stage' },
-  { src: '/assets/img_11.jpg', alt: 'Carved jack-o-lanterns glowing on stone steps' },
-  { src: '/assets/img_02.jpg', alt: 'DJ performing in front of festival crowd' },
-  { src: '/assets/img_12.jpg', alt: 'Moody horror-themed bar lounge interior' },
-  { src: '/assets/img_04.jpg', alt: 'Costume contest winners on stage' },
-  { src: '/assets/img_03.jpg', alt: 'Haunted pumpkin display wall' },
-  { src: '/assets/img_10.jpg', alt: 'Laser storm over the main stage' },
-] as const
+export const DEFAULT_LOCATIONS: LocationItem[] = [
+  {
+    id: 'grand-arena',
+    name: 'The Grand Arena',
+    address: 'Expo Centre, Ferozepur Road',
+    city: 'Lahore, Pakistan',
+    gatesOpen: '8:00 PM',
+    eventTime: '8:00 PM – 2:00 AM',
+    parking: 'Available On-site',
+    directionsUrl:
+      'https://www.google.com/maps/search/?api=1&query=Expo+Centre+Ferozepur+Road+Lahore+Pakistan',
+  },
+]
 
 /* --------------------------- Testimonials ------------------------- */
 
@@ -236,9 +228,9 @@ export const FAQS = [
 export const FOOTER_LINKS = {
   quick: [
     { label: 'Event', href: '#event' },
-    { label: 'Experience', href: '#experience' },
     { label: 'Tickets', href: '#tickets' },
     { label: 'Gallery', href: '#gallery' },
+    { label: 'Location', href: '#location' },
     { label: 'FAQ', href: '#faq' },
   ],
   support: [

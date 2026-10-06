@@ -43,3 +43,28 @@ Stage Summary:
 - Deliverable: complete haunted-event landing page at / (Next.js 16 + TS + Tailwind 4 + framer-motion + sonner + Prisma/SQLite)
 - API: POST /api/newsletter (validated, idempotent)
 - Assets: /public/assets/img_00–14.jpg; Stitch originals in /download/stitch/
+
+---
+Task ID: 3
+Agent: main (Super Z)
+Task: Hero admin-managed video/image bg, remove Experience section, videos-only 16:9 gallery slider, multi-location section, plan + build admin dashboard
+
+Work Log:
+- Found mixkit CDN now 403 (old hero video was dead); sourced new media instead: Wikimedia Commons + Pexels direct CDNs (curl -L, verified via ffmpeg frame extraction + visual check)
+- Produced 7 H.264 720p 16:9 MP4s (23MB) in public/assets/videos/: hero-moon (full moon clouds), g-laser-green, g-laser-blue, g-forest-rave (blur-pad portrait->16:9), g-storm, g-hellfire, g-crypt + poster JPGs
+- Prisma: added HeroSettings (singleton), GalleryVideo, EventLocation models; db:push; idempotent seed (scripts/seed-nightfall.ts): 1 hero + 6 videos + 3 venues (Lahore/Karachi/Islamabad)
+- event-data.ts: removed EXPERIENCES + GALLERY_IMAGES + FEATURED_REELS; added HeroMedia/VideoSlide/LocationItem types + DEFAULT_* fallbacks; nav/footer "Experience" links replaced with "Location"
+- Deleted experience.tsx; removed from page
+- hero.tsx: accepts HeroMedia prop (video or image bg, poster blend layer, gradients intact)
+- gallery.tsx: rewritten — videos-only 16:9 stage slider, autoplay/muted/loop, click-to-pause, mute + fullscreen buttons, playback progress bar, dots + counter + arrows, 16:9 thumbnail rail with "Now Playing" badges; no photo mosaic
+- location.tsx: rewritten — multi-location selector cards (3 venues), AnimatePresence details (gates/time/parking), per-venue map pin positions + label, per-venue Get Directions
+- page.tsx: async server component; force-dynamic; reads hero/videos/locations from Prisma with try/catch fallback to defaults (verified fallback path during stale-client window)
+- Admin: /admin console (login gate, passcode 'nightfall' via ADMIN_PASSCODE env, sha256 httpOnly cookie 8h); tabs Overview/Hero Media/Gallery Videos/Locations/Subscribers
+- Admin APIs (all guarded): session/login/logout, hero GET/PUT (upsert), videos GET/POST + PUT/DELETE [id], locations GET/POST + PUT/DELETE [id], subscribers GET/DELETE + CSV export client-side
+- Fixed: stale Prisma client after db push (restarted dev), 1 lint error (setState-in-effect), 2 unused eslint-disable warnings
+- Browser-verified: hero video/image modes propagate from admin to landing (image mode tested E2E + reverted), gallery slider + 6 thumbs, venue switching (pin + details), videos CRUD toggle hides/shows reel on landing, locations + subscribers tabs, mobile 390px location stack; lint clean; dev.log clean
+
+Stage Summary:
+- Landing page content (hero bg, gallery reels, venues) is now fully DB-driven and admin-manageable with safe fallbacks
+- Admin dashboard at /admin (passcode: nightfall — change via ADMIN_PASSCODE)
+- All videos self-hosted under /public/assets/videos (no external CDN dependency)

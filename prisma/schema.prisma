@@ -37,3 +37,41 @@ model NewsletterSubscriber {
   source    String   @default("landing-page")
   createdAt DateTime @default(now())
 }
+
+// Singleton row (id = "hero") controlling the landing hero background
+model HeroSettings {
+  id        String   @id @default("hero")
+  mediaType String   @default("video") // "video" | "image"
+  mediaUrl  String
+  posterUrl String?
+  updatedAt DateTime @updatedAt
+}
+
+model GalleryVideo {
+  id        String   @id @default(cuid())
+  title     String
+  subtitle  String?
+  videoUrl  String
+  posterUrl String?
+  duration  String?
+  badge     String?
+  sortOrder Int      @default(0)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model EventLocation {
+  id            String   @id @default(cuid())
+  name          String
+  address       String?
+  city          String
+  gatesOpen     String?
+  eventTime     String?
+  parking       String?
+  directionsUrl String?
+  sortOrder     Int      @default(0)
+  active        Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
