@@ -68,3 +68,22 @@ Stage Summary:
 - Landing page content (hero bg, gallery reels, venues) is now fully DB-driven and admin-manageable with safe fallbacks
 - Admin dashboard at /admin (passcode: nightfall — change via ADMIN_PASSCODE)
 - All videos self-hosted under /public/assets/videos (no external CDN dependency)
+
+---
+Task ID: 3
+Agent: main (Super Z)
+Task: Create new GitHub repo and push Nightfall project
+
+Work Log:
+- Verified GitHub token (fine-grained PAT) -> account: hasnain8849
+- Security audit before publish: found .env + db/custom.db tracked in git; scripts scanned for API keys (clean, only HTML input type="password" match)
+- Removed .env and db/custom.db from git tracking, added /db/ + *.db to .gitignore, committed (387446c)
+- Checked file sizes: largest tracked file 5.9MB (g-laser-blue.mp4), all under GitHub 100MB limit
+- Attempted POST /user/repos -> 403 "Resource not accessible by personal access token" (needs administration=write or repository_creation=write)
+- Verified token CAN push to existing repos (push=true on all 5 owned repos); no orgs; no pre-created nightfall repo
+- Configured remote origin = https://github.com/hasnain8849/nightfall.git (token kept out of .git/config)
+
+Stage Summary:
+- Repo fully prepared & clean: 4 commits, 168 tracked files, 0 dirty files
+- BLOCKED on repo creation: token lacks repository-creation permission (user must create repo manually at github.com/new OR edit token permissions)
+- Push command ready: git -c http.extraheader="AUTHORIZATION: bearer <token>" push -u origin main
